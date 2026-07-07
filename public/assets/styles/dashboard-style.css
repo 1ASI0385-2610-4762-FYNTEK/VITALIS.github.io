@@ -1,4 +1,7 @@
-/* ESTILOS DEL ENTORNO DE LOGIN Y DASHBOARD INTERNO VITALIS */
+/* ============================================================
+   ESTILOS DEL ENTORNO DE LOGIN Y DASHBOARD INTERNO VITALIS
+   ============================================================ */
+
 :root {
     --bg-dark-zen: #030213;
     --border-color: #E5E5E5;
@@ -21,7 +24,10 @@ body {
 .mb-32 { margin-bottom: 32px; }
 .mt-32 { margin-top: 32px; }
 
-/* ESTRUCTURA LOGIN */
+/* ============================================================
+   ESTRUCTURA DE AUTENTICACIÓN (LOGIN)
+   ============================================================ */
+
 .login-wrapper {
     height: 100vh;
     display: flex;
@@ -77,74 +83,100 @@ body {
     border-color: #111111;
 }
 
-/* GRID SELECCIÓN DE ROL EN LOGIN */
-.role-login-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-.role-login-box {
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.role-login-box:hover {
-    border-color: #111111;
-    background-color: #FAFAFA;
-}
-
-.role-login-box h4 {
-    margin: 0;
-    font-size: 14px;
-}
-
-.role-login-box small {
-    color: var(--text-muted);
-    font-size: 11px;
-}
-
-.role-icon-mini {
-    font-size: 24px;
-}
-
-.active-role-box {
-    border-color: #111111;
-    background-color: #FAFAFA;
-    border-width: 2px;
-}
-
+/* BOTÓN 1: INGRESAR AL ESPACIO ZEN */
 .btn-login-submit {
     width: 100%;
-    padding: 16px;
+    padding: 16px; /* Altura idéntica base */
     background-color: #111111;
     color: #FFFFFF;
-    border: none;
+    border: 1px solid #111111; /* Borde explícito para igualar simetría */
     border-radius: 8px;
     font-size: 15px;
     font-weight: 500;
     font-family: inherit;
     cursor: pointer;
+    box-sizing: border-box; /* Fuerza que el padding no desborde las medidas */
     transition: background-color 0.2s ease;
 }
 
-.btn-login-submit:not(:disabled):hover {
+.btn-login-submit:hover {
     background-color: #333333;
 }
 
-.btn-disabled {
-    background-color: var(--border-color) !important;
-    color: var(--text-muted) !important;
-    cursor: not-allowed !important;
+/* DIVIDER MONOCROMÁTICO (o) */
+.login-divider {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--text-muted);
+    font-size: 13px;
+    position: relative;
 }
 
-/* NAVBAR INTERNO DEL DASHBOARD */
+.login-divider::before,
+.login-divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 42%;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.login-divider::before { left: 0; }
+.login-divider::after { right: 0; }
+
+/* CORRECCIÓN: BOTÓN 2: CREAR CUENTA LINK (Mismo tamaño exacto que el de ingresar) */
+.btn-create-account-link {
+    display: inline-block;
+    width: 100%;
+    padding: 16px; /* Corregido: antes estaba en 14px */
+    background-color: transparent;
+    color: #111111;
+    border: 1px solid #111111;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: inherit;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box; /* Sincroniza el cálculo de dimensiones internas en WebStorm */
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-create-account-link:hover {
+    background-color: #FAFAFA;
+}
+
+/* BOTÓN DE REGRESO SUPERIOR */
+.btn-back-login {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    margin-bottom: 24px;
+    background-color: #FAFAFA;
+    color: #111111;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-back-login:hover {
+    background-color: #E5E5E5;
+    border-color: #111111;
+    transform: translateX(-2px);
+}
+
+/* ============================================================
+   NAVBAR INTERNO DEL DASHBOARD
+   ============================================================ */
+
 .dash-navbar {
     background-color: #000000;
     color: #FFFFFF;
@@ -183,7 +215,10 @@ body {
     font-size: 12px;
 }
 
-/* COMPONENTES DEL DASHBOARD */
+/* ============================================================
+   COMPONENTES GENERALES DE CONTENEDORES Y TARJETAS
+   ============================================================ */
+
 .dash-container {
     max-width: 1140px;
     margin: 40px auto;
@@ -216,7 +251,10 @@ body {
     margin-bottom: 24px;
 }
 
-/* SELECTORES DE ÁNIMO (HU-01) */
+/* ============================================================
+   SELECTORES DE ÁNIMO (HU-01)
+   ============================================================ */
+
 .mood-selector-container {
     display: flex;
     gap: 12px;
@@ -251,7 +289,10 @@ body {
 
 .hidden-element { display: none; }
 
-/* GRÁFICO MOCKUP DE ESTRÉS (HU-02) */
+/* ============================================================
+   GRÁFICO MOCKUP DE ESTRÉS (HU-02)
+   ============================================================ */
+
 .stress-chart-mock {
     height: 120px;
     display: flex;
@@ -290,7 +331,10 @@ body {
     font-weight: 600;
 }
 
-/* CALENDARIO DE LÍNEA DE TIEMPO (HU-03 / HU-11) */
+/* ============================================================
+   CALENDARIO DE LÍNEA DE TIEMPO (HU-13 / HU-11)
+   ============================================================ */
+
 .calendar-header-flex {
     display: flex;
     justify-content: space-between;
@@ -341,7 +385,10 @@ body {
 .badge-student { background-color: #222222; color: #ffffff; }
 .badge-intern  { background-color: #ffffff; color: #000000; }
 
-/* TAREAS PENDIENTES (HU-14) */
+/* ============================================================
+   GESTIÓN DE TAREAS PENDIENTES (HU-14)
+   ============================================================ */
+
 .inline-form-zen {
     display: flex;
     gap: 12px;
@@ -382,7 +429,10 @@ body {
     accent-color: #000000;
 }
 
-/* ASISTENTE DE HÁBITOS AI (HU-31) */
+/* ============================================================
+   ASISTENTE DE HÁBITOS AI (HU-31)
+   ============================================================ */
+
 .ai-recommendation-box {
     display: flex;
     align-items: center;
@@ -408,7 +458,7 @@ body {
 .ai-text-content p {
     margin: 0;
     font-size: 13px;
-    color: var(--text-muted);
+    color: #666666;
     line-height: 1.5;
 }
 
@@ -433,7 +483,10 @@ body {
     background-color: #FAFAFA;
 }
 
-/* BLOQUE DE ESTUDIO (HU-11) */
+/* ============================================================
+   PLANIFICADOR DE BLOQUES DE ESTUDIO (HU-11)
+   ============================================================ */
+
 .study-form-container {
     background-color: #FAFAFA;
     border: 1px dashed var(--border-color);
@@ -458,4 +511,37 @@ body {
 .btn-cancel-zen {
     color: #111111;
     border-color: #111111;
+}
+
+/* ============================================================
+   PRICING CARD BUTTON ALIGNMENT FIX (Centrado de Botones)
+   ============================================================ */
+
+.pricing-card-button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.pricing-card-button-container .btn-login-submit {
+    max-width: 100%;
+    width: 100%;
+}
+
+/* ============================================================
+   CONFIGURACIÓN RESPONSIVA
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dash-card {
+        padding: 24px;
+    }
+
+    .pricing-header h1 {
+        font-size: 28px;
+    }
 }
