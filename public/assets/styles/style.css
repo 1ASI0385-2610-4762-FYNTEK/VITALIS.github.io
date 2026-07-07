@@ -64,7 +64,7 @@ body {
 .text-center { text-align: center; }
 .mb-64 { margin-bottom: 64px; }
 
-/* NAVBAR COMPONENT A FONDO NEGRO (image_9e7241.png) */
+/* NAVBAR COMPONENT A FONDO NEGRO */
 .navbar {
     background-color: #000000;
     border-bottom: 1px solid #1A1A1A;
@@ -235,7 +235,7 @@ body {
     gap: 16px;
 }
 
-/* COMPONENTES GENERALES DE DISEÑO ZEN (Píldoras y marcos) */
+/* COMPONENTES GENERALES DE DISEÑO ZEN */
 .font-zen-title {
     font-family: var(--font-serif);
     font-weight: 400;
@@ -289,7 +289,7 @@ body {
     margin-bottom: 0;
 }
 
-/* SISTEMA DE TRIPLE PILAR CON ESTRUCTURA MODULAR Y DISTRIBUCIÓN EQUILIBRADA */
+/* SISTEMA DE TRIPLE PILAR */
 .pilar-column {
     display: flex;
     flex-direction: column;
@@ -315,7 +315,7 @@ body {
     color: #444444;
 }
 
-/* SECCIÓN DE SEGMENTOS OBJETIVO ASIMÉTRICOS CON DISTRIBUCIÓN VISUAL DINÁMICA */
+/* SECCIÓN DE SEGMENTOS OBJETIVO */
 .flex-column-zen {
     display: flex;
     flex-direction: column;
@@ -374,7 +374,7 @@ body {
     object-fit: cover;
 }
 
-/* APARTADO ¿POR QUÉ VITALIS? CON PROPUESTA DE VALOR Y BENEFICIOS PRINCIPALES */
+/* APARTADO ¿POR QUÉ VITALIS? */
 .grid-2-why {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -443,7 +443,7 @@ body {
     background-color: #000000;
 }
 
-/* STICKY FOOTER PERSISTENTE EN LÍNEA CON ESTRUCTURA FIJA Y ACCESO CONTINUO */
+/* STICKY FOOTER PERSISTENTE */
 .footer {
     background-color: #030213;
     border-top: 1px solid #1A1A1A;
@@ -487,23 +487,20 @@ body {
     color: #ECECF0;
 }
 
-.footer-nav-links,
-.footer-legal-links {
+.footer-nav-links {
     display: flex;
     align-items: center;
     font-family: var(--font-serif);
 }
 
-.footer-nav-links a,
-.footer-legal-links a {
+.footer-nav-links a {
     color: #FFFFFF;
     text-decoration: none;
     font-size: 14px;
     transition: color 0.2s ease;
 }
 
-.footer-nav-links a:hover,
-.footer-legal-links a:hover {
+.footer-nav-links a:hover {
     color: #CCCCCC;
 }
 
@@ -514,113 +511,7 @@ body {
     user-select: none;
 }
 
-/* OVERLAY MODAL DE SELECCIÓN DE ROL EN REGISTRO */
-.hidden-zen {
-    display: none !important;
-}
-
-.register-role-overlay {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-    padding: 24px;
-}
-
-.register-role-card {
-    background-color: #FFFFFF;
-    border-radius: 20px;
-    padding: 48px;
-    max-width: 560px;
-    width: 100%;
-    position: relative;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
-.close-register-btn {
-    position: absolute;
-    top: 16px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 28px;
-    line-height: 1;
-    cursor: pointer;
-    color: var(--color-text-muted);
-    transition: color 0.2s ease;
-}
-
-.close-register-btn:hover {
-    color: var(--color-text-main);
-}
-
-.register-main-title {
-    font-family: var(--font-serif);
-    font-size: 26px;
-    font-weight: 400;
-    margin: 0 0 8px 0;
-}
-
-.register-subtitle-text {
-    font-size: 14px;
-    color: var(--color-text-muted);
-    margin: 0;
-}
-
-.grid-2-roles {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 8px;
-}
-
-.role-selection-card {
-    border: 1px solid var(--color-border);
-    border-radius: 14px;
-    padding: 24px 20px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-align: center;
-}
-
-.role-selection-card:hover {
-    border-color: #111111;
-    background-color: var(--color-bg-alt);
-}
-
-.role-selection-card h3 {
-    font-size: 15px;
-    font-weight: 600;
-    margin: 12px 0 8px 0;
-}
-
-.role-selection-card p {
-    font-size: 13px;
-    color: var(--color-text-muted);
-    line-height: 1.5;
-    margin: 0;
-}
-
-.role-selection-icon {
-    font-size: 32px;
-}
-
-.active-register-role {
-    border-color: #111111;
-    border-width: 2px;
-    background-color: var(--color-bg-alt);
-}
-
-.btn-role-disabled {
-    background-color: var(--color-border) !important;
-    color: var(--color-text-muted) !important;
-    cursor: not-allowed !important;
-}
-
-/* ANIMACIONES COMPLEMENTARIAS JAVASCRIPT PARA INTERACCIONES DINÁMICAS */
+/* INTERACCIONES */
 .btn, .btn-navbar-white, .btn-dark-block, .btn-navbar-outline {
     position: relative;
     overflow: hidden;
@@ -635,243 +526,18 @@ body {
     pointer-events: none;
 }
 
-.btn-navbar-white .zen-ripple, .btn-navbar-outline .zen-ripple {
-    background-color: rgba(255, 255, 255, 0.15);
-}
-
 @keyframes rippleAnimation {
-    to {
-        transform: scale(4);
-        opacity: 0;
-    }
+    to { transform: scale(4); opacity: 0; }
 }
 
 main {
     padding-bottom: 160px;
 }
 
-/* CONFIGURACIÓN RESPONSIVA DE ESTRUCTURA, ESPACIADO Y ELEMENTOS */
 @media (max-width: 900px) {
-    .footer {
-        position: static;
-    }
-    .footer-grid-layout {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-    .grid-2-why {
-        grid-template-columns: 1fr;
-    }
-    .why-actions-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .btn-dark-block {
-        max-width: 100%;
-    }
+    .footer { position: static; }
+    .footer-grid-layout { flex-direction: column; text-align: center; gap: 20px; }
+    .grid-2-why { grid-template-columns: 1fr; }
+    .why-actions-container { flex-direction: column; align-items: center; }
+    .btn-dark-block { max-width: 100%; }
 }
-
-@media (max-width: 768px) {
-    .grid-2-segments {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-
-    .segment-info-pill {
-        align-items: center
-
-            /* ============================================================
-               ZEN TOOLKIT — Estilos del panel flotante de funciones demo
-               (US-01, US-07, US-16, US-19, US-27, US-31, US-45, US-46)
-               ============================================================ */
-        .zen-fab {
-        position: fixed;
-        right: 24px;
-        bottom: 96px;
-        z-index: 1100;
-        background-color: #000000;
-        color: #FFFFFF;
-        border: none;
-        border-radius: 999px;
-        padding: 14px 22px;
-        font-family: var(--font-sans);
-        font-size: 14px;
-        font-weight: 500;
-        cursor: pointer;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.18);
-        transition: transform 0.2s ease, background-color 0.2s ease;
-    }
-        .zen-fab:hover { transform: translateY(-2px); background-color: #222222; }
-
-        .zen-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.45);
-            z-index: 1200;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-        }
-        .zen-overlay.open { display: flex; }
-
-        .zen-panel {
-            background: #FFFFFF;
-            width: 100%;
-            max-width: 460px;
-            max-height: 82vh;
-            overflow-y: auto;
-            border-radius: 20px;
-            padding: 28px;
-            font-family: var(--font-sans);
-            position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-        .zen-panel h3 {
-            font-family: var(--font-serif);
-            font-size: 20px;
-            margin-bottom: 4px;
-        }
-        .zen-panel .zen-us-tag {
-            display: inline-block;
-            font-size: 11px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            color: #666666;
-            background: #F2F2F2;
-            border-radius: 8px;
-            padding: 3px 8px;
-            margin-bottom: 12px;
-        }
-        .zen-panel-close {
-            position: absolute;
-            top: 18px;
-            right: 18px;
-            background: none;
-            border: none;
-            font-size: 18px;
-            cursor: pointer;
-            color: #111111;
-        }
-        .zen-tool-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-        .zen-tool-nav button {
-            border: 1px solid var(--color-border);
-            background: var(--color-bg-alt);
-            border-radius: 12px;
-            padding: 8px 12px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-        .zen-tool-nav button.active,
-        .zen-tool-nav button:hover { background: #111111; color: #FFFFFF; }
-
-        .zen-tool-view { display: none; }
-        .zen-tool-view.active { display: block; }
-
-        .zen-mood-options { display: flex; gap: 10px; margin: 12px 0; flex-wrap: wrap; }
-        .zen-mood-option {
-            border: 1px solid var(--color-border);
-            border-radius: 12px;
-            padding: 10px 14px;
-            cursor: pointer;
-            font-size: 20px;
-            background: var(--color-bg-alt);
-        }
-        .zen-mood-option.selected { border-color: #111111; background: #ECECF0; }
-
-        .zen-input, .zen-textarea {
-            width: 100%;
-            border: 1px solid var(--color-border);
-            border-radius: 10px;
-            padding: 10px 12px;
-            font-family: inherit;
-            font-size: 14px;
-            margin-top: 8px;
-        }
-        .zen-hint { font-size: 12px; color: #D4183D; margin-top: 6px; display: none; }
-        .zen-hint.show { display: block; }
-        .zen-success { font-size: 13px; color: #111111; margin-top: 10px; display: none; }
-        .zen-success.show { display: block; }
-
-        .zen-timer-display {
-            font-family: var(--font-serif);
-            font-size: 42px;
-            text-align: center;
-            margin: 16px 0 8px 0;
-        }
-        .zen-timer-phrase { text-align: center; font-size: 13px; color: #666; margin-bottom: 16px; }
-
-        .zen-subtask-list { list-style: none; margin-top: 14px; padding: 0; }
-        .zen-subtask-list li { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 14px; }
-        .zen-progress-track { background: #F2F2F2; border-radius: 8px; height: 8px; margin-top: 14px; overflow: hidden; }
-        .zen-progress-fill { background: #111111; height: 100%; width: 0%; transition: width 0.3s ease; }
-
-        .zen-rec-card { background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: 14px; padding: 16px; margin-top: 10px; }
-        .zen-rec-actions { display: flex; gap: 8px; margin-top: 12px; }
-        .zen-rec-actions button {
-            flex: 1; border-radius: 10px; border: 1px solid var(--color-border); background: #FFFFFF;
-            padding: 8px; cursor: pointer; font-size: 13px;
-        }
-
-        .zen-toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #F2F2F2; }
-        .zen-switch { position: relative; width: 42px; height: 24px; }
-        .zen-switch input { opacity: 0; width: 0; height: 0; }
-        .zen-switch .zen-slider {
-            position: absolute; cursor: pointer; inset: 0; background-color: var(--color-border);
-            transition: .2s; border-radius: 999px;
-        }
-        .zen-switch .zen-slider::before {
-            content: ""; position: absolute; height: 18px; width: 18px; left: 3px; top: 3px;
-            background-color: white; transition: .2s; border-radius: 50%;
-        }
-        .zen-switch input:checked + .zen-slider { background-color: #111111; }
-        .zen-switch input:checked + .zen-slider::before { transform: translateX(18px); }
-
-        .zen-chart-bars {
-            display: flex;
-            align-items: flex-end;
-            gap: 10px;
-            height: 140px;
-            margin: 16px 0 8px 0;
-            border-bottom: 1px solid var(--color-border);
-            padding-bottom: 6px;
-        }
-        .zen-bar-col {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            height: 100%;
-            cursor: pointer;
-        }
-        .zen-bar {
-            width: 100%;
-            max-width: 28px;
-            background-color: #111111;
-            border-radius: 6px 6px 0 0;
-            transition: opacity 0.2s ease;
-        }
-        .zen-bar-col:hover .zen-bar { opacity: 0.6; }
-        .zen-bar-label { font-size: 11px; color: #666666; margin-top: 6px; }
-
-        #zen-energy-options button.active { background: #111111; color: #FFFFFF; }
-
-        .zen-emergency-list { list-style: none; padding: 0; margin-top: 12px; }
-        .zen-emergency-list li { margin-bottom: 8px; }
-        .zen-emergency-list a {
-            display: block; padding: 10px 12px; border: 1px solid var(--color-border); border-radius: 10px;
-            text-decoration: none; color: #111111; font-size: 14px;
-        }
-        .zen-emergency-list a:hover { background: var(--color-bg-alt); }
-
-        @media (max-width: 480px) {
-            .zen-fab { right: 12px; bottom: 88px; padding: 12px 16px; font-size: 13px; }
-        }
