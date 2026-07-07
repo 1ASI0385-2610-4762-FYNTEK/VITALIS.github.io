@@ -1,0 +1,92 @@
+/* ============================================================
+   VITALIS — Estilos Exclusivos para la Vista de Términos
+   ============================================================ */
+
+.terms-container {
+    max-width: 840px; /* Ancho optimizado para lecturas de textos largos */
+    margin: 50px auto;
+    padding: 0 24px;
+    font-family: 'Inter', sans-serif;
+}
+
+.terms-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    color: #111111;
+    margin-bottom: 8px;
+}
+
+.terms-meta {
+    font-size: 13px;
+    color: #666666;
+    text-align: center;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Espaciados Internos de las Cláusulas Legales */
+.terms-section {
+    margin-bottom: 32px;
+}
+
+.terms-section:last-child {
+    margin-bottom: 0;
+}
+
+.terms-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #FAFAFA;
+    padding-bottom: 6px;
+}
+
+.terms-section p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #222222;
+    text-align: justify;
+}
+
+.terms-list {
+    margin-top: 12px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.terms-list li {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #222222;
+}
+
+/* Botón de Confirmación Inferior */
+.btn-back-action {
+    background-color: #111111;
+    color: #FFFFFF;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 20px;
+    font-size: 13.5px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-back-action:hover {
+    background-color: #333333;
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 600px) {
+    .terms-title { font-size: 28px; }
+    .terms-container { margin: 30px auto; }
+}
