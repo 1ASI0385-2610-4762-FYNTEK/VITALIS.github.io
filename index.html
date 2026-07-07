@@ -20,12 +20,12 @@
         </div>
         <nav class="nav-links">
             <a href="#">Home</a>
-            <a href="#">About Us</a>
+            <a href="public/assets/HTML/about.html">About Us</a>
         </nav>
         <div class="navbar-actions">
-            <!-- Botón conectado para redirigir al Login -->
+            <!-- Bloque Unificado de Acciones a la Derecha Conectado con las Nuevas Vistas -->
             <button class="btn-navbar-outline" onclick="openLogin()">Iniciar Sesión</button>
-            <button class="btn-navbar-white" onclick="openLogin()">Empezar ahora</button>
+            <a href="public/assets/HTML/pricing.html" class="btn btn-navbar-white" style="text-decoration: none;">Empezar ahora</a>
         </div>
     </div>
 </header>
@@ -39,12 +39,13 @@
                 VITALIS es el ecosistema digital diseñado para reducir drásticamente la carga cognitiva de estudiantes y practicantes peruanos. Organiza tu día, monitorea tus niveles de estrés y evita el burnout.
             </p>
             <div class="hero-actions">
-                <button class="btn btn-primary" onclick="openLogin()">Empezar prueba gratuita</button>
+                <a href="public/assets/HTML/pricing.html" class="btn btn-primary" style="text-decoration: none;">Empezar prueba gratuita</a>
                 <a href="#problem" class="btn btn-secondary">Conocer los pilares</a>
             </div>
         </div>
     </section>
 
+    <!-- DEL CAOS AL ESPACIO ZEN -->
     <section id="problem" class="section-alt">
         <div class="container">
 
@@ -105,6 +106,7 @@
         </div>
     </section>
 
+    <!-- SECCIÓN DE SEGMENTOS -->
     <section id="segments" class="section">
         <div class="container flex-column-zen">
 
@@ -141,6 +143,7 @@
         </div>
     </section>
 
+    <!-- ¿POR QUÉ VITALIS? -->
     <section id="why-vitalis" class="section section-alt border-none-zen">
         <div class="container flex-column-zen">
 
@@ -162,9 +165,9 @@
             </div>
 
             <div class="why-actions-container">
-                <button class="btn btn-dark-block" onclick="openLogin()">
+                <a href="public/assets/HTML/pricing.html" class="btn btn-dark-block" style="text-decoration: none;">
                     Empieza tu prueba <br> gratuita hoy
-                </button>
+                </a>
                 <div class="btn btn-dark-block text-message-block">
                     Únete a la nueva cultura del autocuidado y bienestar para las futuras generaciones de profesionales en el Perú.
                 </div>
@@ -174,6 +177,7 @@
     </section>
 </main>
 
+<!-- FOOTER CON ENLACES LEGALES COMPLETOS -->
 <footer class="footer">
     <div class="container footer-grid-layout">
 
@@ -196,15 +200,16 @@
             <span class="nav-divider">|</span>
             <a href="#segments">Segmentos</a>
             <span class="nav-divider">|</span>
-            <a href="#why-vitalis">Precios</a>
+            <a href="public/assets/HTML/pricing.html">Precios</a>
         </div>
 
         <div class="footer-legal-links">
-            <a href="#">Soporte</a>
+            <!-- Ruteo Completo de Enlaces del Marco Legal (US-16) -->
+            <a href="public/assets/HTML/support.html">Soporte</a>
             <span class="nav-divider">|</span>
-            <a href="#">Términos y Condiciones</a>
+            <a href="public/assets/HTML/terms.html">Términos y Condiciones</a>
             <span class="nav-divider">|</span>
-            <a href="#">Privacidad</a>
+            <a href="public/assets/HTML/privacy.html">Privacidad</a>
         </div>
 
     </div>
