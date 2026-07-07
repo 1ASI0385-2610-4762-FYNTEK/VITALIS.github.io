@@ -1,0 +1,143 @@
+/* ============================================================
+   VITALIS — Estilos Exclusivos para el Módulo de Soporte
+   ============================================================ */
+
+:root {
+    --bg-support-dark: #030213;
+    --border-light: #E5E5E5;
+    --text-gray: #666666;
+}
+
+body.bg-support-zen {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-support-dark);
+    color: #111111;
+}
+
+.text-center { text-align: center; }
+.mb-32 { margin-bottom: 32px; }
+.mt-32 { margin-top: 32px; }
+
+/* Estructura del Contenedor de Soporte */
+.support-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.support-card {
+    background-color: #FFFFFF;
+    padding: 44px;
+    border-radius: 20px;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+}
+
+.support-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0 0 6px 0;
+}
+
+.support-subtitle {
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Campos del Formulario */
+.form-group-zen {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group-zen label {
+    font-size: 12.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.support-input, .support-textarea {
+    padding: 14px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 14.5px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.support-input:focus, .support-textarea:focus {
+    border-color: #111111;
+}
+
+.support-textarea {
+    resize: none; /* Bloquea el redimensionamiento manual para no romper el layout */
+    line-height: 1.6;
+}
+
+/* Alineación y Botón Enviar */
+.support-button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 28px;
+}
+
+.btn-support-submit {
+    width: 100%;
+    max-width: 260px;
+    padding: 14px 24px;
+    background-color: #111111;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.btn-support-submit:hover {
+    background-color: #333333;
+}
+
+/* Botón de Retorno */
+.btn-back-home {
+    background: none;
+    border: 1px solid #111111;
+    color: #111111;
+    padding: 10px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-back-home:hover {
+    background-color: #111111;
+    color: #FFFFFF;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .support-card {
+        padding: 28px 24px;
+    }
+    .btn-support-submit {
+        max-width: 100%;
+    }
+}
