@@ -1,0 +1,75 @@
+/* ============================================================
+   VITALIS — Estilos Exclusivos para la Vista de Privacidad
+   ============================================================ */
+
+.privacy-container {
+    max-width: 840px;
+    margin: 50px auto;
+    padding: 0 24px;
+    font-family: 'Inter', sans-serif;
+}
+
+.privacy-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    color: #111111;
+    margin-bottom: 8px;
+}
+
+.privacy-meta {
+    font-size: 13px;
+    color: #666666;
+    text-align: center;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.privacy-section {
+    margin-bottom: 32px;
+}
+
+.privacy-section:last-child {
+    margin-bottom: 0;
+}
+
+.privacy-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #FAFAFA;
+    padding-bottom: 6px;
+}
+
+.privacy-section p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #222222;
+    text-align: justify;
+}
+
+.btn-privacy-action {
+    background-color: #111111;
+    color: #FFFFFF;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 20px;
+    font-size: 13.5px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-privacy-action:hover {
+    background-color: #333333;
+}
+
+@media (max-width: 600px) {
+    .privacy-title { font-size: 28px; }
+    .privacy-container { margin: 30px auto; }
+}
