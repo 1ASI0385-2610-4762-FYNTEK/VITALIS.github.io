@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/dashboard-style.css">
-
 </head>
 <body>
 
@@ -23,7 +22,6 @@
 </header>
 
 <main class="dash-container">
-
     <div class="dash-grid-top">
         <div class="dash-card">
             <h3 class="dash-card-title">¿Cómo te sientes hoy?</h3>
@@ -54,16 +52,13 @@
     </div>
 
     <div class="dash-grid-top mt-32">
-
         <div class="dash-card">
             <h3 class="dash-card-title">Tareas Pendientes</h3>
             <p class="dash-card-subtitle">HU-14: Añade tus responsabilidades diarias en un entorno limpio.</p>
-
             <form onsubmit="addTask(event)" class="inline-form-zen">
                 <input type="text" id="task-input" required placeholder="Ej. Estudiar para la PC2 de Arquitectura" class="form-input task-input-flex">
                 <button type="submit" class="btn btn-primary btn-add-task">Añadir</button>
             </form>
-
             <ul id="task-list-zen" class="task-list-container">
                 <li class="task-item-zen"><input type="checkbox" onchange="toggleTask(this)"> <span>Revisar métricas de UX/UI en Miro</span></li>
                 <li class="task-item-zen"><input type="checkbox" onchange="toggleTask(this)"> <span>Avanzar documentación del Sprint 2</span></li>
@@ -73,7 +68,6 @@
         <div class="dash-card">
             <h3 class="dash-card-title">Asistente de Hábitos AI</h3>
             <p class="dash-card-subtitle">HU-31: Sugerencias automatizadas basadas en tu estado actual.</p>
-
             <div class="ai-recommendation-box">
                 <div class="ai-icon-pulse">◈</div>
                 <div class="ai-text-content">
@@ -86,7 +80,6 @@
                 <button class="btn-feedback-zen" onclick="feedbackAI(false)">✕ No útil</button>
             </div>
         </div>
-
     </div>
 
     <div class="dash-card mt-32">
@@ -95,7 +88,6 @@
                 <h3 class="dash-card-title">Calendario Integrado Zen</h3>
                 <p class="dash-card-subtitle">HU-13 y HU-11: Planifica tus bloques de estudio para mejorar tu productividad académica.</p>
             </div>
-
             <button class="btn btn-primary" onclick="openStudyBlockForm()">+ Crear Bloque de Estudio</button>
         </div>
 
@@ -126,7 +118,6 @@
 </main>
 
 <script>
-    // Configuración de recomendaciones AI dinámicas basadas en el rol (HU-31)
     const aiRecommendations = {
         estudiante: {
             title: "Optimización de Enfoque Académico",
@@ -154,13 +145,11 @@
             roleBadge.className = 'badge-intern';
         }
 
-        // Inyección dinámica de la sugerencia personalizada de hábitos (HU-31)
         const recommendation = aiRecommendations[role] || aiRecommendations.estudiante;
         document.getElementById('ai-suggestion-title').innerText = recommendation.title;
         document.getElementById('ai-suggestion-body').innerText = recommendation.body;
     });
 
-    // Lógica interactiva para HU-14: Registrar tareas pendientes
     function addTask(e) {
         e.preventDefault();
         const input = document.getElementById('task-input');
@@ -194,7 +183,6 @@
         }
     }
 
-    // Lógica interactiva para HU-31: Feedback de la IA
     function feedbackAI(isUseful) {
         alert(isUseful
             ? "¡Gracias! El algoritmo priorizará este tipo de recomendaciones en tu bitácora Zen."
@@ -202,7 +190,6 @@
         );
     }
 
-    // Lógica interactiva para HU-11: Crear horarios de estudio
     function openStudyBlockForm() {
         const form = document.getElementById('study-block-form');
         form.classList.toggle('hidden-element');
@@ -231,10 +218,8 @@
 
         block.appendChild(timeLabel);
         block.appendChild(pill);
-
         timeline.appendChild(block);
 
-        // Limpiar y cerrar formulario
         document.getElementById('study-subject').value = '';
         document.getElementById('study-time').value = '';
         openStudyBlockForm();
