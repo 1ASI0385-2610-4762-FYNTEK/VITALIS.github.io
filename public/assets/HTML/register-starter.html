@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITALIS - Registro Prueba Inicial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/register-style.css">
+    <link rel="stylesheet" href="../styles/dashboard-style.css">
+</head>
+<body class="bg-register-zen">
+
+<div class="register-wrapper">
+    <div class="register-card">
+        <div class="text-center mb-24">
+            <h1 class="register-title">Activar Plan Starter</h1>
+            <p class="register-subtitle">Completa tu perfil para iniciar tu mes de prueba gratuita.</p>
+        </div>
+
+        <form id="form-register-starter" onsubmit="handleStarterRegistration(event)">
+
+            <div class="form-group-zen">
+                <label for="reg-fullname">Nombres y Apellidos</label>
+                <input type="text" id="reg-fullname" required placeholder="Ej. Jarod Céspedes" class="register-input">
+            </div>
+
+            <div class="form-group-zen">
+                <label for="reg-username">Cuenta o Correo Electrónico</label>
+                <input type="email" id="reg-username" required placeholder="Ej. usuario@upc.pe" class="register-input">
+            </div>
+
+            <div class="form-group-zen">
+                <label for="reg-password">Contraseña a utilizar</label>
+                <input type="password" id="reg-password" required placeholder="Crea una contraseña segura" class="register-input">
+            </div>
+
+            <div class="form-group-zen">
+                <label>Selecciona tu Perfil Objetivo</label>
+                <div class="role-select-flex">
+                    <label class="role-option-label">
+                        <input type="radio" name="reg-role" value="estudiante" required onclick="toggleRoleFields('estudiante')">
+                        <span class="role-custom-box">🎓 Estudiante</span>
+                    </label>
+                    <label class="role-option-label">
+                        <input type="radio" name="reg-role" value="practicante" required onclick="toggleRoleFields('practicante')">
+                        <span class="role-custom-box">💼 Pre-Profesional</span>
+                    </label>
+                </div>
+            </div>
+
+            <div id="dynamic-fields" class="dynamic-container hidden-element">
+
+                <div class="form-group-zen">
+                    <label id="label-institution" for="reg-institution">Institución / Organización</label>
+                    <input type="text" id="reg-institution" placeholder="Ej. Universidad Peruana de Ciencias Aplicadas" class="register-input">
+                </div>
+
+                <div class="form-group-zen">
+                    <label for="reg-hours">Horas diarias estimadas de alta carga cognitiva</label>
+                    <select id="reg-hours" class="register-input">
+                        <option value="4-6">De 4 a 6 horas</option>
+                        <option value="6-8">De 6 a 8 horas</option>
+                        <option value="8+">Más de 8 horas</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="register-button-container">
+                <button type="submit" class="btn-register-submit">Comenzar Mi Mes Gratis</button>
+            </div>
+        </form>
+
+        <div class="text-center mt-24">
+            <a href="pricing.html" class="btn-back-pricing">Regresar a Planes</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleRoleFields(role) {
+        const dynamicContainer = document.getElementById('dynamic-fields');
+        const institutionLabel = document.getElementById('label-institution');
+        const institutionInput = document.getElementById('reg-institution');
+
+        dynamicContainer.classList.remove('hidden-element');
+
+        if (role === 'estudiante') {
+            institutionLabel.innerText = "Universidad o Centro de Estudios";
+            institutionInput.placeholder = "Ej. Universidad Peruana de Ciencias Aplicadas (UPC)";
+        } else {
+            institutionLabel.innerText = "Empresa o Centro de Prácticas";
+            institutionInput.placeholder = "Ej. Área de Desarrollo / Innovación Tecnológica";
+        }
+    }
+
+    function handleStarterRegistration(e) {
+        e.preventDefault();
+        const fullname = document.getElementById('reg-fullname').value.trim();
+        const username = document.getElementById('reg-username').value.trim();
+        const selectedRole = document.querySelector('input[name="reg-role"]:checked').value;
+
+        // Almacenamiento transitorio simulado para renderizar el Dashboard con los datos del formulario
+        sessionStorage.setItem('vitalis_username', fullname);
+        sessionStorage.setItem('vitalis_role', selectedRole);
+
+        setTimeout(() => {
+            alert(`¡Cuenta Starter Activada!\n\nTe damos la bienvenida a VITALIS, ${fullname}. Tu mes de prueba gratuita ha sido inicializado con éxito.`);
+            window.location.href = 'dashboard.html';
+        }, 200);
+    }
+</script>
+</body>
+</html>
