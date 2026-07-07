@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITALIS - Soporte y Reclamos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Vinculación directa a su CSS exclusivo -->
+    <link rel="stylesheet" href="../styles/support-style.css">
+</head>
+<body class="bg-support-zen">
+
+<div class="support-wrapper">
+    <div class="support-card">
+        <div class="text-center mb-32">
+            <h1 class="support-title">Centro de Soporte</h1>
+            <p class="support-subtitle">Escribe tu problema, duda o queja para asistirte de inmediato.</p>
+        </div>
+
+        <form id="form-support" onsubmit="handleSupportSubmit(event)">
+            <!-- Nombre de Usuario o Cuenta -->
+            <div class="form-group-zen">
+                <label for="support-username">Nombre de Usuario o Cuenta</label>
+                <input type="text" id="support-username" required placeholder="Ej. Jarod Céspedes" class="support-input">
+            </div>
+
+            <!-- Contraseña -->
+            <div class="form-group-zen">
+                <label for="support-password">Contraseña de la Cuenta</label>
+                <input type="password" id="support-password" required placeholder="••••••••" class="support-input">
+            </div>
+
+            <!-- Caja de Reclamo / Problema / Duda -->
+            <div class="form-group-zen">
+                <label for="support-claim">Detalle de su Reclamo, Duda o Queja</label>
+                <textarea id="support-claim" required rows="5" placeholder="Describe detalladamente el inconveniente con la plataforma o tu plan..." class="support-textarea"></textarea>
+            </div>
+
+            <!-- Contenedor Centrado de Envío -->
+            <div class="support-button-container">
+                <button type="submit" class="btn-support-submit">Enviar Reclamo</button>
+            </div>
+        </form>
+
+        <div class="text-center mt-32">
+            <a href="../../../index.html" class="btn-back-home">Volver al Inicio</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function handleSupportSubmit(e) {
+        e.preventDefault();
+        const username = document.getElementById('support-username').value;
+        const claim = document.getElementById('support-claim').value;
+
+        // Simulación asíncrona de procesamiento de ticket de soporte técnico
+        setTimeout(() => {
+            alert(`Estimado(a) ${username},\n\nSu solicitud ha sido registrada de manera exitosa. Nuestro equipo de soporte Vitalis revisará su caso y le enviará una respuesta a la brevedad.`);
+
+            // Limpieza del formulario
+            document.getElementById('form-support').reset();
+            window.location.href = '../../../index.html';
+        }, 200);
+    }
+</script>
+</body>
+</html>
