@@ -1,220 +1,540 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VITALIS - Recupera tu paz mental, potencia tu rendimiento</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="public/assets/styles/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VITALIS - Bienestar y Productividad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- NAVBAR PRINCIPAL -->
-<header class="navbar">
-    <div class="navbar-container">
-        <div class="logo-area">
-            <img src="public/assets/images/vitalis-fondo-negro.png" alt="VITALIS Logo" class="vitalis-logo-img">
-            <span class="brand-name">VITALIS</span>
-        </div>
-        <nav class="nav-links">
-            <a href="#">Home</a>
-            <a href="public/assets/HTML/about.html">About Us</a>
-        </nav>
-        <div class="navbar-actions">
-            <!-- Bloque Unificado de Acciones a la Derecha Conectado con las Nuevas Vistas -->
-            <button class="btn-navbar-outline" onclick="openLogin()">Iniciar Sesión</button>
-            <a href="public/assets/HTML/pricing.html" class="btn btn-navbar-white" style="text-decoration: none;">Empezar ahora</a>
-        </div>
+<!-- =========================================================
+     PANTALLA DE LOGIN (Usuario y Contraseña predeterminados)
+     Usuario: estudiante   Contraseña: vitalis2026
+========================================================= -->
+<section id="login-screen">
+  <div class="login-box">
+    <div class="logo-zone">
+      <svg class="logo-icon" width="40" height="44" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 32 L20 20" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <path d="M20 44 L20 30" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+        <path d="M20 27 Q15 23 10 18" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M20 24 Q25 20 30 16" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M10 18 Q7 14 5 10" stroke="#000" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M10 18 Q13 14 14 10" stroke="#000" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M30 16 Q27 11 26 7" stroke="#000" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M30 16 Q33 12 35 8" stroke="#000" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M20 22 Q17 17 16 12" stroke="#000" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M20 22 Q20 16 20 11" stroke="#000" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M20 22 Q23 17 24 12" stroke="#000" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <circle cx="5" cy="9" r="2.4" fill="#000"/><circle cx="14" cy="9" r="2.4" fill="#000"/>
+        <circle cx="16" cy="11" r="2" fill="#000"/><circle cx="20" cy="10" r="2.4" fill="#000"/>
+        <circle cx="24" cy="11" r="2" fill="#000"/><circle cx="26" cy="6" r="2.4" fill="#000"/>
+        <circle cx="35" cy="7" r="2.4" fill="#000"/>
+      </svg>
+      <h1 class="logo-word">VITALIS</h1>
     </div>
-</header>
 
-<main>
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="container hero-container">
-            <h1 class="hero-title">Recupera tu paz mental,<br><span class="text-mute">potencia tu rendimiento.</span></h1>
-            <p class="hero-subtitle">
-                VITALIS es el ecosistema digital diseñado para reducir drásticamente la carga cognitiva de estudiantes y practicantes peruanos. Organiza tu día, monitorea tus niveles de estrés y evita el burnout.
-            </p>
-            <div class="hero-actions">
-                <a href="public/assets/HTML/pricing.html" class="btn btn-primary" style="text-decoration: none;">Empezar prueba gratuita</a>
-                <a href="#problem" class="btn btn-secondary">Conocer los pilares</a>
-            </div>
-        </div>
-    </section>
+    <p class="login-subtitle">Tu espacio zen de bienestar y productividad</p>
 
-    <!-- DEL CAOS AL ESPACIO ZEN -->
-    <section id="problem" class="section-alt">
-        <div class="container">
+    <form id="login-form">
+      <div class="campo">
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" placeholder="Ingresa tu usuario" autocomplete="username">
+      </div>
+      <div class="campo">
+        <label for="clave">Contraseña</label>
+        <input type="password" id="clave" placeholder="Ingresa tu contraseña" autocomplete="current-password">
+      </div>
+      <p id="login-error" class="login-error"></p>
+      <button type="submit" class="btn-principal btn-ancho">Iniciar Sesión</button>
+    </form>
 
-            <div class="text-center mb-64">
-                <h2 class="section-title font-zen-title">Del Caos al Espacio Zen</h2>
-            </div>
+    <p class="login-hint">Usuario de prueba: <b>estudiante</b> - Contraseña: <b>vitalis2026</b></p>
+  </div>
+</section>
 
-            <div class="grid-2 mb-64">
-                <div class="image-placeholder-frame">
-                    <img src="public/assets/images/saturación-y-estres-colecctivo.png" alt="Saturación y Estrés Colectivo" class="problem-illustration">
-                </div>
-                <div class="card card-white-pill">
-                    <h3 class="card-pill-title">Saturación Visual</h3>
-                    <p class="card-pill-text">
-                        Los estudiantes y practicantes experimentan altos niveles de estrés al intentar balancear horarios complejos y hábitos saludables.
-                    </p>
-                    <p class="card-pill-text">
-                        Las aplicaciones tradicionales basadas en listas de colores brillantes solo aumentan la fatiga visual y la procrastinación.
-                    </p>
-                </div>
-            </div>
 
-            <div class="text-center mb-64" style="margin-top: 80px;">
-                <h2 class="section-title font-zen-title">Pilares de VITALIS</h2>
-            </div>
+<!-- =========================================================
+     APLICACIÓN PRINCIPAL (oculta hasta iniciar sesión)
+========================================================= -->
+<div id="app" class="oculto">
 
-            <div id="pilars" class="grid-3">
+  <!-- ================= HEADER ================= -->
+  <header class="topbar">
+    <button id="btn-hamburguesa" class="hamburguesa" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
 
-                <div class="pilar-column">
-                    <div class="pilar-header-tag">Reducción de Carga Cognitiva</div>
-                    <div class="card card-white-pill">
-                        <p class="card-pill-text text-center-zen">
-                            Interfaz monocromática basada en espacios en blanco que elimina la fatiga visual y la sobreestimulación mental, permitiéndote enfocarte en lo que realmente importa.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="pilar-column">
-                    <div class="pilar-header-tag">Asistencia de IA para Hábitos</div>
-                    <div class="card card-white-pill">
-                        <p class="card-pill-text text-center-zen">
-                            Nuestra IA desglosa tus tareas más complejas en pasos manejables y personalizados, AWS/LLM eliminando la parálisis por análisis y guiándote en la formación de hábitos saludables.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="pilar-column">
-                    <div class="pilar-header-tag">Alertas No Invasivas</div>
-                    <div class="card card-white-pill">
-                        <p class="card-pill-text text-center-zen">
-                            Un sistema de notificaciones respetuoso que prioriza tus bloques de concentración y fomenta pausas activas para evitar el agotamiento físico y emocional.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SECCIÓN DE SEGMENTOS -->
-    <section id="segments" class="section">
-        <div class="container flex-column-zen">
-
-            <div class="grid-2-segments mb-80-zen">
-                <div class="segment-info-pill">
-                    <div class="segment-header-tag">Para el estudiante</div>
-                    <div class="card card-white-pill">
-                        <p class="card-pill-text text-justify-zen">
-                            Gestiona eficientemente el estrés de las semanas de parciales y finales.
-                            Mejora tus rutinas de sueño y alimentación para rendir al máximo sin colapsar.
-                        </p>
-                    </div>
-                </div>
-                <div class="image-segment-frame">
-                    <img src="public/assets/images/monitoreo-de-habitos-y-estres-academico.png" alt="Monitoreo de hábitos y estrés académico" class="segment-illustration">
-                </div>
-            </div>
-
-            <div class="grid-2-segments">
-                <div class="segment-info-pill">
-                    <div class="segment-header-tag">Para el Pre/Profesional</div>
-                    <div class="card card-white-pill">
-                        <p class="card-pill-text text-justify-zen">
-                            Encuentra el equilibrio perfecto entre la oficina y la universidad.
-                            Monitorea tus niveles de estrés laboral y recibe recomendaciones para evitar el burnout en tus primeras etapas profesionales.
-                        </p>
-                    </div>
-                </div>
-                <div class="image-segment-frame">
-                    <img src="public/assets/images/equilibrio-oficina-y-universidad-contra-el-burnout.png" alt="Equilibrio oficina y universidad contra el burnout" class="segment-illustration">
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ¿POR QUÉ VITALIS? -->
-    <section id="why-vitalis" class="section section-alt border-none-zen">
-        <div class="container flex-column-zen">
-
-            <div class="text-center mb-64">
-                <h2 class="section-title font-zen-title">¿Por qué VITALIS?</h2>
-            </div>
-
-            <div class="grid-2-why mb-64">
-                <div class="card card-white-pill-why">
-                    <p class="card-pill-text text-center-why">
-                        Solución adaptada a los picos de carga de las universidades locales, con integración de métodos de pago de uso diario y cero comisiones como Yape, Plin o transferencias directas (Interbank, BCP, etc.).
-                    </p>
-                </div>
-                <div class="card card-white-pill-why">
-                    <p class="card-pill-text text-center-why">
-                        A diferencia de una simple lista de tareas, Vitalis analiza tus patrones de comportamiento para detectar riesgos de salud mental antes de que se conviertan en un problema.
-                    </p>
-                </div>
-            </div>
-
-            <div class="why-actions-container">
-                <a href="public/assets/HTML/pricing.html" class="btn btn-dark-block" style="text-decoration: none;">
-                    Empieza tu prueba <br> gratuita hoy
-                </a>
-                <div class="btn btn-dark-block text-message-block">
-                    Únete a la nueva cultura del autocuidado y bienestar para las futuras generaciones de profesionales en el Perú.
-                </div>
-            </div>
-
-        </div>
-    </section>
-</main>
-
-<!-- FOOTER CON ENLACES LEGALES COMPLETOS -->
-<footer class="footer">
-    <div class="container footer-grid-layout">
-
-        <div class="footer-socials">
-            <a href="#" aria-label="LinkedIn Vitalis" class="social-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-            </a>
-            <a href="#" aria-label="Facebook Vitalis" class="social-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-            </a>
-            <a href="#" aria-label="Instagram Vitalis" class="social-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-        </div>
-
-        <div class="footer-nav-links">
-            <a href="#">Propuesta</a>
-            <span class="nav-divider">|</span>
-            <a href="#problem">Funciones</a>
-            <span class="nav-divider">|</span>
-            <a href="#segments">Segmentos</a>
-            <span class="nav-divider">|</span>
-            <a href="public/assets/HTML/pricing.html">Precios</a>
-        </div>
-
-        <div class="footer-legal-links">
-            <!-- Ruteo Completo de Enlaces del Marco Legal (US-16) -->
-            <a href="public/assets/HTML/support.html">Soporte</a>
-            <span class="nav-divider">|</span>
-            <a href="public/assets/HTML/terms.html">Términos y Condiciones</a>
-            <span class="nav-divider">|</span>
-            <a href="public/assets/HTML/privacy.html">Privacidad</a>
-        </div>
-
+    <div class="logo-zone logo-chica">
+      <svg class="logo-icon" width="24" height="26" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 32 L20 20" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <path d="M20 44 L20 30" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+        <path d="M20 27 Q15 23 10 18" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M20 24 Q25 20 30 16" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M10 18 Q7 14 5 10" stroke="#000" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M10 18 Q13 14 14 10" stroke="#000" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M30 16 Q27 11 26 7" stroke="#000" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M30 16 Q33 12 35 8" stroke="#000" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M20 22 Q17 17 16 12" stroke="#000" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M20 22 Q20 16 20 11" stroke="#000" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M20 22 Q23 17 24 12" stroke="#000" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <circle cx="5" cy="9" r="2.4" fill="#000"/><circle cx="14" cy="9" r="2.4" fill="#000"/>
+        <circle cx="16" cy="11" r="2" fill="#000"/><circle cx="20" cy="10" r="2.4" fill="#000"/>
+        <circle cx="24" cy="11" r="2" fill="#000"/><circle cx="26" cy="6" r="2.4" fill="#000"/>
+        <circle cx="35" cy="7" r="2.4" fill="#000"/>
+      </svg>
+      <span class="logo-word-chica">VITALIS</span>
     </div>
-</footer>
 
-<script src="public/assets/scripts/main.js"></script>
+    <!-- Notificación no invasiva (US-05, US-11, US-34, US-42) -->
+    <div id="banner-alerta" class="banner-alerta oculto"></div>
+
+    <button id="btn-cerrar-sesion" class="btn-secundario">Cerrar Sesión</button>
+  </header>
+
+  <div class="layout">
+
+    <!-- ================= MENÚ LATERAL / HAMBURGUESA ================= -->
+    <nav id="sidebar" class="sidebar">
+      <ul>
+        <li><a href="#" data-seccion="sec-inicio" class="nav-link activo">Inicio</a></li>
+        <li><a href="#" data-seccion="sec-emocional" class="nav-link">Estado Emocional</a></li>
+        <li><a href="#" data-seccion="sec-habitos" class="nav-link">Hábitos y Metas</a></li>
+        <li><a href="#" data-seccion="sec-tareas" class="nav-link">Tareas y Horarios</a></li>
+        <li><a href="#" data-seccion="sec-ia" class="nav-link">Asistente IA</a></li>
+        <li><a href="#" data-seccion="sec-bienestar" class="nav-link">Bienestar Físico</a></li>
+        <li><a href="#" data-seccion="sec-reportes" class="nav-link">Reportes</a></li>
+        <li><a href="#" data-seccion="sec-config" class="nav-link">Configuración</a></li>
+      </ul>
+    </nav>
+
+    <!-- Fondo oscuro para cerrar el menú en móvil -->
+    <div id="overlay" class="overlay oculto"></div>
+
+    <!-- ================= CONTENIDO PRINCIPAL ================= -->
+    <main class="contenido">
+
+      <!-- ============================================================
+           SECCIÓN 1: INICIO / RESUMEN
+           US-35 Resumen diario | US-40 Progreso académico
+           US-43 Progreso hábitos | US-46 Frases motivacionales
+           US-13 Acceso rápido (2 toques)
+      ============================================================ -->
+      <section id="sec-inicio" class="seccion activa">
+        <h2 class="titulo-seccion">Resumen de Hoy</h2>
+        <p class="fecha-hoy" id="fecha-hoy"></p>
+
+        <div class="tarjetas-resumen">
+          <div class="tarjeta">
+            <span class="tarjeta-numero" id="resumen-tareas">0</span>
+            <span class="tarjeta-etiqueta">Tareas completadas</span>
+          </div>
+          <div class="tarjeta">
+            <span class="tarjeta-numero" id="resumen-animo">--</span>
+            <span class="tarjeta-etiqueta">Ánimo actual</span>
+          </div>
+          <div class="tarjeta">
+            <span class="tarjeta-numero" id="resumen-sueno">-- h</span>
+            <span class="tarjeta-etiqueta">Sueño registrado</span>
+          </div>
+          <div class="tarjeta">
+            <span class="tarjeta-numero" id="resumen-estres">--</span>
+            <span class="tarjeta-etiqueta">Nivel de estrés</span>
+          </div>
+        </div>
+
+        <div class="fila-doble">
+          <div class="caja">
+            <h3>Progreso Académico</h3>
+            <div class="barra-track"><div class="barra-fill" id="barra-academico" style="width:0%"></div></div>
+            <p class="texto-chico" id="texto-academico">0% de tus objetivos completados</p>
+          </div>
+          <div class="caja">
+            <h3>Progreso de Hábitos</h3>
+            <div class="barra-track"><div class="barra-fill" id="barra-habitos" style="width:0%"></div></div>
+            <p class="texto-chico" id="texto-habitos">0% de tus metas completadas</p>
+          </div>
+        </div>
+
+        <div class="caja">
+          <h3>Frase Motivacional</h3>
+          <p class="frase" id="frase-motivacional">Presiona el botón para inspirarte.</p>
+          <button class="btn-principal" id="btn-frase">Nueva frase</button>
+        </div>
+
+        <div class="caja">
+          <h3>Acceso Rápido</h3>
+          <div class="accesos-rapidos">
+            <button class="btn-secundario acceso-rapido" data-ir="sec-tareas">+ Nueva tarea</button>
+            <button class="btn-secundario acceso-rapido" data-ir="sec-emocional">Registrar ánimo</button>
+            <button class="btn-secundario acceso-rapido" data-ir="sec-ia">Pedir ayuda a IA</button>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           SECCIÓN 2: ESTADO EMOCIONAL
+           US-01 Registro emocional | US-02 Monitorear estrés
+           US-14 Mood tracking 1 clic | US-17 Historial de presión
+           US-05 Alerta estrés elevado | US-11 Alerta burnout
+           US-19 Botón de ayuda de emergencia
+      ============================================================ -->
+      <section id="sec-emocional" class="seccion">
+        <h2 class="titulo-seccion">Estado Emocional</h2>
+
+        <div class="caja">
+          <h3>¿Cómo te sientes ahora? (US-14)</h3>
+          <div class="mood-botones">
+            <button class="mood-btn" data-mood="Muy bien"><i class="fa-solid fa-face-laugh"></i></button>
+            <button class="mood-btn" data-mood="Bien"><i class="fa-solid fa-face-smile"></i></button>
+            <button class="mood-btn" data-mood="Normal"><i class="fa-solid fa-face-meh"></i></button>
+            <button class="mood-btn" data-mood="Mal"><i class="fa-solid fa-face-frown"></i></button>
+            <button class="mood-btn" data-mood="Muy mal"><i class="fa-solid fa-face-sad-tear"></i></button>
+          </div>
+          <p class="texto-chico" id="mood-guardado"></p>
+        </div>
+
+        <div class="caja">
+          <h3>Registro Emocional Diario (US-01)</h3>
+          <label for="nota-emocional">¿Qué pasó hoy?</label>
+          <textarea id="nota-emocional" rows="3" placeholder="Escribe brevemente cómo te sientes..."></textarea>
+          <button class="btn-principal" id="btn-guardar-nota">Guardar registro</button>
+        </div>
+
+        <div class="caja">
+          <h3>Nivel de Estrés (US-02 / US-05 / US-11)</h3>
+          <label for="slider-estres">Desliza según tu nivel de estrés actual (0 = calmado, 10 = muy estresado)</label>
+          <input type="range" id="slider-estres" min="0" max="10" value="0">
+          <p class="texto-chico">Valor actual: <span id="valor-estres">0</span>/10</p>
+          <button class="btn-principal" id="btn-guardar-estres">Guardar nivel de estrés</button>
+        </div>
+
+        <div class="caja">
+          <h3>Historial de Presión (US-17)</h3>
+          <div class="historial-barras" id="historial-estres"></div>
+          <p class="texto-chico">Últimos registros de estrés (más reciente a la derecha).</p>
+        </div>
+
+        <div class="caja emergencia">
+          <h3>¿Necesitas ayuda ahora? (US-19)</h3>
+          <p class="texto-chico">Si sientes una crisis emocional, no estás solo/a. Contacta ayuda inmediata:</p>
+          <button class="btn-emergencia" id="btn-ayuda-emergencia"><i class="fa-solid fa-triangle-exclamation"></i> Botón de Ayuda Inmediata</button>
+          <div id="info-emergencia" class="info-emergencia oculto">
+            <p><i class="fa-solid fa-phone"></i> Línea 113 - Salud (opción Salud Mental), Perú, gratuita 24/7</p>
+            <p><i class="fa-solid fa-phone"></i> Línea 106 - Minsa, apoyo emocional</p>
+            <p>Si es una emergencia, acude al centro de salud más cercano.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           SECCIÓN 3: HÁBITOS Y METAS
+           US-04/US-18 Sueño | US-10 Hábitos progresivos IA
+           US-49 Nivel concentración | US-50/US-29 Metas personales
+           US-21 Recordatorio H2O | US-43 Progreso hábitos
+      ============================================================ -->
+      <section id="sec-habitos" class="seccion">
+        <h2 class="titulo-seccion">Hábitos y Metas</h2>
+
+        <div class="fila-doble">
+          <div class="caja">
+            <h3>Registro de Sueño (US-04 / US-18)</h3>
+            <label for="horas-sueno">Horas dormidas anoche</label>
+            <input type="number" id="horas-sueno" min="0" max="14" step="0.5" placeholder="Ej: 7.5">
+            <button class="btn-principal" id="btn-guardar-sueno">Guardar</button>
+            <p class="texto-chico" id="lista-sueno"></p>
+          </div>
+
+          <div class="caja">
+            <h3>Nivel de Concentración (US-49)</h3>
+            <label for="slider-concentracion">¿Qué tan concentrado te sientes hoy?</label>
+            <input type="range" id="slider-concentracion" min="0" max="10" value="5">
+            <p class="texto-chico">Valor: <span id="valor-concentracion">5</span>/10</p>
+            <button class="btn-principal" id="btn-guardar-concentracion">Guardar</button>
+          </div>
+        </div>
+
+        <div class="caja">
+          <h3>Sugerencia de Hábito Progresivo con IA (US-10)</h3>
+          <label for="select-habito">Elige un hábito que quieras mejorar</label>
+          <select id="select-habito">
+            <option value="dormir">Dormir mejor</option>
+            <option value="leer">Leer más</option>
+            <option value="ejercicio">Hacer ejercicio</option>
+            <option value="estudiar">Estudiar sin procrastinar</option>
+            <option value="orden">Ordenar mi espacio</option>
+          </select>
+          <button class="btn-principal" id="btn-sugerir-habito">Sugerir paso pequeño</button>
+          <p class="texto-chico resultado-ia" id="resultado-habito"></p>
+        </div>
+
+        <div class="caja">
+          <h3>Metas Personales (US-50 / US-29)</h3>
+          <div class="fila-input">
+            <input type="text" id="nueva-meta" placeholder="Ej: Leer 10 páginas al día">
+            <button class="btn-principal" id="btn-agregar-meta">Agregar</button>
+          </div>
+          <ul class="lista-check" id="lista-metas"></ul>
+        </div>
+
+        <div class="caja">
+          <h3>Recordatorio de Hidratación (US-21)</h3>
+          <p class="texto-chico">Vasos de agua registrados hoy: <span id="contador-agua">0</span></p>
+          <button class="btn-secundario" id="btn-tome-agua"><i class="fa-solid fa-droplet"></i> Ya tomé un vaso de agua</button>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           SECCIÓN 4: TAREAS Y HORARIOS
+           US-03/US-41 Recordatorios | US-06 Horarios estudio
+           US-22 Bloqueo laboral | US-23 Agenda exámenes
+           US-24 Checklist diario | US-25 Bloques de tiempo
+           US-26 Jerarquía urgencia | US-27 Pomodoro
+           US-28 Bitácora logros | US-30 Ciclos críticos
+           US-38/US-39/US-40 Objetivos académicos
+      ============================================================ -->
+      <section id="sec-tareas" class="seccion">
+        <h2 class="titulo-seccion">Tareas y Horarios</h2>
+
+        <div class="caja">
+          <label class="switch-linea">
+            <input type="checkbox" id="check-modo-oficina">
+            <span>Modo Oficina activo — oculta tareas académicas (US-22)</span>
+          </label>
+          <label class="switch-linea">
+            <input type="checkbox" id="check-modo-parciales">
+            <span>Activar aviso de semana de parciales (US-30)</span>
+          </label>
+          <p id="aviso-parciales" class="aviso-parciales oculto">⚠ Semana crítica activada: prioriza el descanso entre sesiones de estudio.</p>
+        </div>
+
+        <div class="caja">
+          <h3>Checklist Diario (US-24 / US-03 / US-26 / US-25)</h3>
+          <div class="fila-input">
+            <input type="text" id="nueva-tarea" placeholder="Nombre de la tarea">
+            <select id="prioridad-tarea">
+              <option value="alta">Alta</option>
+              <option value="media" selected>Media</option>
+              <option value="baja">Baja</option>
+            </select>
+            <select id="bloque-tarea">
+              <option value="academico">Académico</option>
+              <option value="personal">Personal</option>
+            </select>
+            <select id="turno-tarea">
+              <option value="manana">Mañana</option>
+              <option value="tarde">Tarde</option>
+              <option value="noche">Noche</option>
+            </select>
+            <input type="time" id="hora-tarea">
+            <button class="btn-principal" id="btn-agregar-tarea">Agregar</button>
+          </div>
+          <ul class="lista-tareas" id="lista-tareas"></ul>
+        </div>
+
+        <div class="caja">
+          <h3>Pomodoro Minimalista (US-27)</h3>
+          <p class="pomodoro-reloj" id="pomodoro-reloj">25:00</p>
+          <div class="fila-botones">
+            <button class="btn-principal" id="btn-pomodoro-iniciar">Iniciar</button>
+            <button class="btn-secundario" id="btn-pomodoro-pausar">Pausar</button>
+            <button class="btn-secundario" id="btn-pomodoro-reiniciar">Reiniciar</button>
+          </div>
+        </div>
+
+        <div class="fila-doble">
+          <div class="caja">
+            <h3>Horarios de Estudio (US-06)</h3>
+            <div class="fila-input">
+              <input type="text" id="materia-horario" placeholder="Curso">
+              <input type="text" id="dia-horario" placeholder="Día (ej: Lunes)">
+              <input type="time" id="hora-horario">
+              <button class="btn-principal" id="btn-agregar-horario">Agregar</button>
+            </div>
+            <ul class="lista-simple" id="lista-horarios"></ul>
+          </div>
+
+          <div class="caja">
+            <h3>Agenda de Exámenes (US-23)</h3>
+            <div class="fila-input">
+              <input type="text" id="curso-examen" placeholder="Curso">
+              <input type="date" id="fecha-examen">
+              <button class="btn-principal" id="btn-agregar-examen">Agregar</button>
+            </div>
+            <ul class="lista-simple" id="lista-examenes"></ul>
+          </div>
+        </div>
+
+        <div class="caja">
+          <h3>Objetivos Académicos (US-38 / US-39 / US-40)</h3>
+          <div class="fila-input">
+            <input type="text" id="nuevo-objetivo" placeholder="Ej: Aprobar Cálculo con 15">
+            <label class="check-inline"><input type="checkbox" id="objetivo-semanal"> Es meta semanal</label>
+            <button class="btn-principal" id="btn-agregar-objetivo">Agregar</button>
+          </div>
+          <ul class="lista-check" id="lista-objetivos"></ul>
+        </div>
+
+        <div class="caja">
+          <h3>Bitácora de Logros (US-28)</h3>
+          <div class="fila-input">
+            <input type="text" id="nuevo-logro" placeholder="Ej: Terminé el informe antes de tiempo">
+            <button class="btn-principal" id="btn-agregar-logro">Agregar</button>
+          </div>
+          <ul class="lista-simple" id="lista-logros"></ul>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           SECCIÓN 5: ASISTENTE IA
+           US-07 Desglose IA | US-08 Dictado por voz
+           US-09 Filtrado por energía | US-31/US-32 Recomendaciones IA
+           US-33 Consejos de bienestar
+      ============================================================ -->
+      <section id="sec-ia" class="seccion">
+        <h2 class="titulo-seccion">Asistente de IA</h2>
+
+        <div class="caja">
+          <h3>Desglose de Proyectos con IA (US-07)</h3>
+          <label for="proyecto-grande">Describe tu proyecto o tarea grande</label>
+          <input type="text" id="proyecto-grande" placeholder="Ej: Hacer el informe final del curso">
+          <button class="btn-principal" id="btn-desglosar">Desglosar en pasos</button>
+          <ul class="lista-simple" id="lista-desglose"></ul>
+        </div>
+
+        <div class="caja">
+          <h3>Dictado de Tareas por Voz (US-08)</h3>
+          <p class="texto-chico">Presiona el micrófono y dicta tu pendiente (requiere navegador compatible, ej. Chrome).</p>
+          <button class="btn-principal" id="btn-dictar"><i class="fa-solid fa-microphone"></i> Dictar tarea</button>
+          <input type="text" id="texto-dictado" placeholder="Aquí aparecerá lo que dictes..." readonly>
+        </div>
+
+        <div class="caja">
+          <h3>Filtrado de Tareas por Energía (US-09)</h3>
+          <label for="select-energia">¿Cómo está tu energía ahora?</label>
+          <select id="select-energia">
+            <option value="alta">Alta</option>
+            <option value="media">Media</option>
+            <option value="baja">Baja</option>
+          </select>
+          <button class="btn-principal" id="btn-filtrar-energia">Sugerir tareas según mi energía</button>
+          <ul class="lista-simple" id="lista-energia"></ul>
+        </div>
+
+        <div class="caja">
+          <h3>Recomendaciones Personalizadas (US-31 / US-32 / US-33)</h3>
+          <button class="btn-principal" id="btn-recomendacion">Generar recomendación</button>
+          <p class="texto-chico resultado-ia" id="resultado-recomendacion"></p>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           SECCIÓN 6: BIENESTAR FÍSICO
+           US-15 Pausas activas | US-16 Respiración
+           US-20 Tips bienestar | US-34 Alerta exceso trabajo
+           US-44 Tiempo de pantalla | US-45 Modo concentración
+      ============================================================ -->
+      <section id="sec-bienestar" class="seccion">
+        <h2 class="titulo-seccion">Bienestar Físico</h2>
+
+        <div class="fila-doble">
+          <div class="caja">
+            <h3>Pausa Activa (US-15)</h3>
+            <p class="texto-chico">Estira cuello, hombros y muñecas durante 2 minutos.</p>
+            <p class="pomodoro-reloj" id="pausa-reloj">02:00</p>
+            <button class="btn-principal" id="btn-pausa-iniciar">Iniciar pausa</button>
+          </div>
+
+          <div class="caja">
+            <h3>Respiración Guiada (US-16)</h3>
+            <div class="circulo-respiracion" id="circulo-respiracion">Respira</div>
+            <div class="fila-botones">
+              <button class="btn-principal" id="btn-respirar-iniciar">Iniciar</button>
+              <button class="btn-secundario" id="btn-respirar-detener">Detener</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="caja">
+          <h3>Tip de Bienestar del Día (US-20)</h3>
+          <p class="texto-chico" id="tip-bienestar">Presiona para ver un consejo.</p>
+          <button class="btn-principal" id="btn-tip">Ver otro tip</button>
+        </div>
+
+        <div class="fila-doble">
+          <div class="caja">
+            <h3>Tiempo de Pantalla en VITALIS (US-44)</h3>
+            <p class="texto-chico">Minutos en esta sesión: <span id="tiempo-pantalla">0</span> min</p>
+          </div>
+          <div class="caja">
+            <h3>Modo Concentración (US-45)</h3>
+            <label class="switch-linea">
+              <input type="checkbox" id="check-modo-concentracion">
+              <span>Activar modo concentración (oculta banners y distracciones)</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           SECCIÓN 7: REPORTES
+           US-36 Generar reportes | US-37 Compartir con especialista
+      ============================================================ -->
+      <section id="sec-reportes" class="seccion">
+        <h2 class="titulo-seccion">Reportes de Bienestar</h2>
+        <div class="caja">
+          <button class="btn-principal" id="btn-generar-reporte">Generar reporte de la semana</button>
+          <pre class="reporte-texto" id="reporte-texto">Aún no se ha generado ningún reporte.</pre>
+          <div class="fila-botones">
+            <button class="btn-secundario" id="btn-copiar-reporte">Copiar reporte</button>
+            <a id="btn-enviar-reporte" class="btn-secundario" href="#">Enviar a especialista (correo)</a>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           SECCIÓN 8: CONFIGURACIÓN
+           US-42 Notificaciones silenciosas | US-48 Personalizar interfaz
+           US-47 Acceso móvil (responsive) | US-12 Diseño Zen
+      ============================================================ -->
+      <section id="sec-config" class="seccion">
+        <h2 class="titulo-seccion">Configuración</h2>
+
+        <div class="caja">
+          <label class="switch-linea">
+            <input type="checkbox" id="check-notif-silenciosas">
+            <span>Notificaciones silenciosas (US-42)</span>
+          </label>
+        </div>
+
+        <div class="caja">
+          <h3>Tamaño de Interfaz (US-48)</h3>
+          <div class="fila-botones">
+            <button class="btn-secundario" data-tamano="normal">Normal</button>
+            <button class="btn-secundario" data-tamano="grande">Grande</button>
+          </div>
+        </div>
+
+        <div class="caja">
+          <p class="texto-chico">VITALIS está optimizado para computadora y celular (US-47), con una interfaz monocromática y minimalista pensada para reducir la carga cognitiva (US-12).</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
