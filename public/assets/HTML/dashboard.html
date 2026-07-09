@@ -22,99 +22,7 @@
 </header>
 
 <main class="dash-container">
-    <div class="dash-grid-top">
-        <div class="dash-card">
-            <h3 class="dash-card-title">¿Cómo te sientes hoy?</h3>
-            <p class="dash-card-subtitle">HU-01: Registro diario para identificar cambios en tu bienestar.</p>
-            <div class="mood-selector-container">
-                <button class="mood-btn" onclick="registerMood(':D', 'Excelente')">:D</button>
-                <button class="mood-btn" onclick="registerMood(':)', 'Bueno')">:)</button>
-                <button class="mood-btn" onclick="registerMood(':|', 'Neutral')">:|</button>
-                <button class="mood-btn" onclick="registerMood(':(', 'Estresado')">: (</button>
-                <button class="mood-btn" onclick="registerMood('>:(', 'Agotado')">&gt;:(</button>
-            </div>
-            <div id="mood-feedback-message" class="feedback-msg hidden-element"></div>
-        </div>
 
-        <div class="dash-card">
-            <h3 class="dash-card-title">Evolución de Estrés</h3>
-            <p class="dash-card-subtitle">HU-02: Gráfico semanal de tus picos de presión.</p>
-            <div class="stress-chart-mock">
-                <div class="chart-bar-container"><div class="chart-bar" style="height: 40px;"></div><span class="day-label">L</span></div>
-                <div class="chart-bar-container"><div class="chart-bar" style="height: 75px;"></div><span class="day-label">M</span></div>
-                <div class="chart-bar-container"><div class="chart-bar" style="height: 90px;"></div><span class="day-label">M</span></div>
-                <div class="chart-bar-container"><div class="chart-bar" style="height: 50px;"></div><span class="day-label">J</span></div>
-                <div class="chart-bar-container"><div class="chart-bar" id="live-stress-bar" style="height: 20px;"></div><span class="day-label-active">V (Hoy)</span></div>
-                <div class="chart-bar-container"><div class="chart-bar" style="height: 10px;"></div><span class="day-label">S</span></div>
-                <div class="chart-bar-container"><div class="chart-bar" style="height: 15px;"></div><span class="day-label">D</span></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="dash-grid-top mt-32">
-        <div class="dash-card">
-            <h3 class="dash-card-title">Tareas Pendientes</h3>
-            <p class="dash-card-subtitle">HU-14: Añade tus responsabilidades diarias en un entorno limpio.</p>
-            <form onsubmit="addTask(event)" class="inline-form-zen">
-                <input type="text" id="task-input" required placeholder="Ej. Estudiar para la PC2 de Arquitectura" class="form-input task-input-flex">
-                <button type="submit" class="btn btn-primary btn-add-task">Añadir</button>
-            </form>
-            <ul id="task-list-zen" class="task-list-container">
-                <li class="task-item-zen"><input type="checkbox" onchange="toggleTask(this)"> <span>Revisar métricas de UX/UI en Miro</span></li>
-                <li class="task-item-zen"><input type="checkbox" onchange="toggleTask(this)"> <span>Avanzar documentación del Sprint 2</span></li>
-            </ul>
-        </div>
-
-        <div class="dash-card">
-            <h3 class="dash-card-title">Asistente de Hábitos AI</h3>
-            <p class="dash-card-subtitle">HU-31: Sugerencias automatizadas basadas en tu estado actual.</p>
-            <div class="ai-recommendation-box">
-                <div class="ai-icon-pulse">◈</div>
-                <div class="ai-text-content">
-                    <h5 id="ai-suggestion-title">Analizando carga cognitiva...</h5>
-                    <p id="ai-suggestion-body">Cargando recomendación Zen personalizada para tu jornada de hoy.</p>
-                </div>
-            </div>
-            <div class="ai-feedback-actions">
-                <button class="btn-feedback-zen" onclick="feedbackAI(true)">✓ Útil</button>
-                <button class="btn-feedback-zen" onclick="feedbackAI(false)">✕ No útil</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="dash-card mt-32">
-        <div class="calendar-header-flex">
-            <div>
-                <h3 class="dash-card-title">Calendario Integrado Zen</h3>
-                <p class="dash-card-subtitle">HU-13 y HU-11: Planifica tus bloques de estudio para mejorar tu productividad académica.</p>
-            </div>
-            <button class="btn btn-primary" onclick="openStudyBlockForm()">+ Crear Bloque de Estudio</button>
-        </div>
-
-        <div id="study-block-form" class="study-form-container hidden-element">
-            <div class="form-group-row">
-                <input type="text" id="study-subject" placeholder="Curso (Ej. Estadística)" class="form-input">
-                <input type="text" id="study-time" placeholder="Horario (Ej. 04:00 PM - 06:00 PM)" class="form-input">
-                <button class="btn btn-primary" onclick="saveStudyBlock()">Guardar Bloque</button>
-                <button class="btn-logout btn-cancel-zen" onclick="openStudyBlockForm()">Cancelar</button>
-            </div>
-        </div>
-
-        <div class="calendar-timeline" id="calendar-timeline-events">
-            <div class="time-block">
-                <span class="time-label">08:00 AM - 11:00 AM</span>
-                <div class="event-pill event-academic">🎓 Clases de Ingeniería de Software (UPC)</div>
-            </div>
-            <div class="time-block" id="conditional-work-block">
-                <span class="time-label">02:00 PM - 06:00 PM</span>
-                <div class="event-pill event-work">💼 Bloque de Prácticas / Proyectos en Oficina</div>
-            </div>
-            <div class="time-block">
-                <span class="time-label">06:30 PM - 08:30 PM</span>
-                <div class="event-pill event-study">📝 Desglose de Entregables Asistido por IA</div>
-            </div>
-        </div>
-    </div>
 </main>
 
 <script>
@@ -245,5 +153,32 @@
         window.location.href = 'login.html';
     }
 </script>
+
+<script src="../scripts/vitalis_us01.js"></script>
+<script src="../scripts/vitalis_us02.js"></script>
+<script src="../scripts/vitalis_us03.js"></script>
+<script src="../scripts/vitalis_us04_18.js"></script>
+<script src="../scripts/vitalis_us27.js"></script>
+<script src="../scripts/vitalis_us05.js"></script>
+<script src="../scripts/vitalis_us06.js"></script>
+<script src="../scripts/vitalis_us07.js"></script>
+<script src="../scripts/vitalis_us08.js"></script>
+<script src="../scripts/vitalis_us09.js"></script>
+<script src="../scripts/vitalis_us11.js"></script>
+<script src="../scripts/vitalis_us15.js"></script>
+<script src="../scripts/vitalis_us16_27.js"></script>
+<script src="../scripts/vitalis_us17_36.js"></script>
+<script src="../scripts/vitalis_us19.js"></script>
+<script src="../scripts/vitalis_us21.js"></script>
+<script src="../scripts/vitalis_us31.js"></script>
+<script src="../scripts/vitalis_us46.js"></script>
+<script src="../scripts/vitalis_us29_50.js"></script>
+<script src="../scripts/vitalis_us38_39.js"></script>
+<script src="../scripts/vitalis_us42_45.js"></script>
+<script src="../scripts/vitalis_us44_49.js"></script>
+<script src="../scripts/vitalis_us22_23_30_34.js"></script>
+<script src="../scripts/vitalis_main.js"></script>
+
+
 </body>
 </html>
