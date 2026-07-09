@@ -545,3 +545,245 @@ body {
         font-size: 28px;
     }
 }
+
+/* ============ VITALIS TOOLS SECTION ============ */
+#zen-tools-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.zen-tool-card {
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.zen-tool-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.zen-us-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.zen-tool-card h3 {
+    margin: 16px 0 12px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #030213;
+}
+
+.zen-tool-card p {
+    margin: 8px 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Charts */
+.zen-chart-bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 8px;
+    height: 180px;
+    margin: 20px 0;
+}
+
+.zen-bar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.zen-bar {
+    width: 30px;
+    background: #030213;
+    border-radius: 4px 4px 0 0;
+    transition: all 0.3s ease;
+}
+
+.zen-bar-col:hover .zen-bar {
+    background: #666;
+}
+
+.zen-bar-label {
+    font-size: 12px;
+    margin-top: 8px;
+    color: #666;
+}
+
+/* Timers */
+.zen-timer-display {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0;
+    color: #030213;
+    font-family: 'Courier New', monospace;
+}
+
+.zen-timer-phrase {
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+    margin: 12px 0;
+}
+
+/* Tools Navigation */
+.zen-tool-nav {
+    display: flex;
+    gap: 8px;
+    margin: 16px 0;
+}
+
+.zen-tool-nav button {
+    flex: 1;
+    padding: 8px 12px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.zen-tool-nav button:hover {
+    background: #e0e0e0;
+}
+
+.zen-tool-nav button.active {
+    background: #030213;
+    color: white;
+    border-color: #030213;
+}
+
+/* Task/Subtask Lists */
+.zen-subtask-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+}
+
+.zen-subtask-list li {
+    padding: 10px;
+    margin: 6px 0;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.zen-subtask-list input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.zen-subtask-list span {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Recommendation Cards */
+.zen-rec-card {
+    background: #f0f0f0;
+    border-left: 3px solid #030213;
+    padding: 14px;
+    border-radius: 6px;
+    margin: 16px 0;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.zen-rec-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.btn-feedback-zen {
+    flex: 1;
+    padding: 8px 12px;
+    background: #030213;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-feedback-zen:hover {
+    background: #333;
+}
+
+/* Success Messages */
+.zen-success {
+    padding: 10px;
+    margin-top: 12px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-radius: 6px;
+    font-size: 12px;
+    display: none;
+}
+
+.zen-success.show {
+    display: block;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Progress Track */
+.zen-progress-track {
+    width: 100%;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 16px 0;
+}
+
+.zen-progress-fill {
+    height: 100%;
+    background: #030213;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #zen-tools-container {
+        grid-template-columns: 1fr;
+    }
+
+    .zen-timer-display {
+        font-size: 36px;
+    }
+}
