@@ -343,3 +343,63 @@
         font-size: 42px;
     }
 }
+
+/* ============================================================
+   AJUSTE RESPONSIVE CRÍTICO PARA EL INTERIOR DE LAS US
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* 1. US-01 (Registro Emocional): Forzar que los emojis bajen en fila si no caben */
+    .dash-card div[style*="display: flex"],
+    .mood-btn-container,
+    #zen-tools-container form {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+    }
+
+    /* Reducir sutilmente el tamaño de los botones de emojis en celulares */
+    .mood-btn {
+        padding: 8px 12px !important;
+        font-size: 14px !important;
+        flex: 1 1 calc(33.33% - 8px) !important; /* Distribuye en bloques si el espacio es muy corto */
+        text-align: center;
+    }
+
+    /* 2. US-02 y US-17/36 (Gráficas de Estrés y Analítica): Ajustar el ancho de las barras */
+    .zen-chart-bars, #zen-analytic-chart {
+        gap: 4px !important; /* Menor espacio entre barras en móvil */
+        padding-bottom: 4px !important;
+    }
+
+    .zen-bar-col {
+        width: auto !important; /* Permitir que colapsen proporcionalmente */
+    }
+
+    .zen-bar {
+        width: 16px !important; /* Reducir de 24px a 16px para que entren los 7 días sin salirse */
+    }
+
+    .zen-bar-label {
+        font-size: 10px !important; /* Tipografía más compacta para los días */
+    }
+
+    /* 3. Ajuste para todos los Inputs y Botones de acción dentro de cualquier US */
+    .zen-input,
+    .register-input,
+    #zen-ai-task,
+    #zen-cancel-break-pass,
+    .dash-card input[type="text"],
+    .dash-card input[type="password"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 4. Listas de subtareas (US-07 - Desglose de IA) y checklist */
+    .zen-subtask-list li, .task-item-zen {
+        padding: 10px !important;
+        font-size: 13px !important;
+        word-break: break-word !important; /* Evita que textos largos rompan la tarjeta */
+    }
+}
