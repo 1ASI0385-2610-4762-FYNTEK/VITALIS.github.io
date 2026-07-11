@@ -11,7 +11,7 @@ function criticalCyclesTemplate() {
         
         <div style="display: flex; align-items: center; justify-content: space-between; background-color: #FAFAFA; border: 1px solid #E5E5E5; padding: 12px; border-radius: 8px; margin-bottom: 16px;">
             <div>
-                <strong style="font-size: 13px; display: block;">🛡️ Activar Bloqueo Laboral (US-22)</strong>
+                <strong style="font-size: 13px; display: block;"> Activar Bloqueo Laboral </strong>
                 <span style="font-size: 11px; color:#666;">Suspende notificaciones de estudio durante tu horario de oficina.</span>
             </div>
             <input type="checkbox" id="zen-toggle-work-lock" style="width: 20px; height: 20px; accent-color: #111111; cursor: pointer;">
@@ -19,7 +19,7 @@ function criticalCyclesTemplate() {
 
         <form id="form-zen-exams" onsubmit="registerZenExam(event)" style="display: flex; flex-direction: column; gap: 8px;">
             <input type="text" id="zen-exam-name" required placeholder="Examen (Ej: Final de Arquitectura de Software)" class="register-input" style="padding: 10px; font-size: 13px;">
-            <button type="submit" class="btn btn-primary" style="padding: 10px;">Registrar Fecha Crítica (US-23)</button>
+            <button type="submit" class="btn btn-primary" style="padding: 10px;">Registrar Fecha Crítica </button>
         </form>
 
         <p class="zen-success" id="zen-exam-success"></p>
@@ -39,7 +39,7 @@ function bindCriticalCycles() {
         success.style.backgroundColor = toggleLock.checked ? '#e8f5e9' : '#f5f5f5';
         success.style.color = toggleLock.checked ? '#2e7d32' : '#111111';
         success.textContent = toggleLock.checked
-            ? '🔒 Escudo laboral activado: Notificaciones de estudio pausadas hasta salir de la oficina.'
+            ? ' Escudo laboral activado: Notificaciones de estudio pausadas hasta salir de la oficina.'
             : 'Escudo desactivado. Volviendo al flujo regular de notificaciones.';
     });
 }
@@ -53,6 +53,6 @@ window.registerZenExam = function(e) {
     success.classList.add('show');
     success.style.backgroundColor = '#fff3e0';
     success.style.color = '#e65100';
-    success.textContent = `📅 Registrado. Alerta: Se detectó alta carga cognitiva para la semana de "${name.value}". La IA reajustará tus Pomodoros automáticamente.`;
+    success.textContent = ` Registrado. Alerta: Se detectó alta carga cognitiva para la semana de "${name.value}". La IA reajustará tus Pomodoros automáticamente.`;
     name.value = '';
 };
