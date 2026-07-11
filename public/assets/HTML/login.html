@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/dashboard-style.css">
+    <script src="../scripts/vitalis_db.js"></script>
+
 </head>
 <body class="bg-zen-dark">
 
@@ -25,7 +27,7 @@
         <form id="form-login" onsubmit="handleLogin(event)">
             <div class="form-group">
                 <label for="username">Nombre de Usuario o Correo</label>
-                <input type="text" id="username" required placeholder="Ej. Jorge Martines o jorge@upc.pe" class="form-input" aria-label="Nombre de usuario o correo">
+                <input type="text" id="username" required placeholder="Ej. adminEstu o adminestu@upc.pe" class="form-input" aria-label="Nombre de usuario o correo">
             </div>
 
             <div class="form-group">
@@ -47,17 +49,30 @@
 <script>
     function handleLogin(e) {
         e.preventDefault();
-        const username = document.getElementById('username').value.trim();
-        const password = document.getElementById('password').value;
 
-        if (!username || !password) {
-            alert('Por favor completa todos los campos obligatorios.');
+        const userInput = document.getElementById('username').value.trim();
+        const passwordInput = document.getElementById('password').value;
+
+        if (!userInput || !passwordInput) {
+            alert('Por favor completa todos los campos.');
             return;
         }
 
-        sessionStorage.setItem('vitalis_username', username);
-        sessionStorage.setItem('vitalis_role', 'estudiante');
-        window.location.href = 'dashboard.html';
+        if (typeof window.dbValidateLogin !== 'function') {
+            alert('Error crítico: El archivo "vitalis_db.js" no se cargó en esta vista. Verifica las carpetas de la ruta.');
+            return;
+        }
+
+        // Validación cruzada (cuenta o correo)
+        const verifiedUser = window.dbValidateLogin(userInput, passwordInput);
+
+        if (verifiedUser) {
+            sessionStorage.setItem('vitalis_username', verifiedUser.fullname);
+            sessionStorage.setItem('vitalis_role', verifiedUser.role);
+            window.location.href = 'dashboard.html';
+        } else {
+            alert('Credenciales incorrectas. Verifica tu cuenta o correo electrónico y la contraseña.');
+        }
     }
 </script>
 </body>
