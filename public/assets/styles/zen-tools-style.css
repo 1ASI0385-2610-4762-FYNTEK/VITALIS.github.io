@@ -1,0 +1,345 @@
+/* ============================================================
+   VITALIS — Estilos Premium para los Módulos Dinámicos (HUs)
+   ============================================================ */
+
+/* Contenedor Maestro Inyectado */
+#zen-tools-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 32px;
+    margin: 40px auto;
+    max-width: 1140px;
+    padding: 0 24px;
+}
+
+/* Tarjeta Base de las Historias de Usuario */
+#zen-tools-container .dash-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease;
+}
+
+#zen-tools-container .dash-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+    border-color: #111111;
+}
+
+/* Etiquetas de Carga e Identificadores (Tags Superiores) */
+.zen-us-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #FAFAFA;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #E5E5E5;
+    margin-bottom: 16px;
+    align-self: flex-start;
+}
+
+/* Títulos y Párrafos Internos */
+#zen-tools-container h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #111111;
+    margin: 0 0 8px 0;
+}
+
+/* Cronómetros y Displays Numéricos (Pomodoro / Respiración / H2O) */
+.zen-timer-display {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 54px;
+    font-weight: 700;
+    color: #111111;
+    text-align: center;
+    margin: 24px 0;
+    letter-spacing: -1px;
+}
+
+.zen-timer-phrase {
+    font-size: 13px;
+    color: #999999;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+/* Entradas de Texto Especiales (Inputs de las Herramientas) */
+.zen-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    background-color: #FFFFFF;
+    transition: border-color 0.2s ease;
+}
+
+.zen-input:focus {
+    border-color: #111111;
+}
+
+/* ============================================================
+   SISTEMA DE BOTONES ELEGANTES PARA LAS USER STORIES
+   ============================================================ */
+
+/* Botones Principales de las US (Guardar, Enviar, Iniciar) */
+#zen-tools-container .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    border-radius: 24px; /* Estilo píldora sofisticado */
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+#zen-tools-container .btn-primary {
+    background-color: #111111;
+    color: #FFFFFF;
+    border: 1px solid #111111;
+}
+
+#zen-tools-container .btn-primary:hover {
+    background-color: transparent;
+    color: #111111;
+}
+
+#zen-tools-container .btn-secondary {
+    background-color: transparent;
+    color: #111111;
+    border: 1px solid #111111;
+}
+
+#zen-tools-container .btn-secondary:hover {
+    background-color: #111111;
+    color: #FFFFFF;
+}
+
+/* Botones Selectores de Estado de Ánimo (HU-01) y Acciones Cortas */
+.mood-btn, #zen-energy-options button, #zen-snooze-options button {
+    background-color: #FAFAFA;
+    color: #111111;
+    border: 1px solid #E5E5E5;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mood-btn:hover, #zen-energy-options button:hover, #zen-snooze-options button:hover {
+    border-color: #111111;
+    background-color: #FFFFFF;
+    transform: translateY(-1px);
+}
+
+/* Estado Activo para Selectores (Filtros de Energía / Estados Marcados) */
+#zen-energy-options button.active, .zen-tool-nav button.active {
+    background-color: #111111 !important;
+    color: #FFFFFF !important;
+    border-color: #111111 !important;
+}
+
+/* Botones de Feedback Pequeños (👍 Útil, 👎 No Útil) y Acciones de Alertas */
+.zen-rec-actions button, .btn-feedback-zen {
+    background-color: #FFFFFF;
+    color: #111111;
+    border: 1px solid #E5E5E5;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.zen-rec-actions button:hover, .btn-feedback-zen:hover {
+    background-color: #111111;
+    color: #FFFFFF;
+    border-color: #111111;
+}
+
+/* Botón de Emergencia / Respiro Crítico (HU-19) */
+#zen-btn-trigger-crisis {
+    border-color: #C62828 !important;
+    color: #C62828 !important;
+    background-color: transparent;
+}
+
+#zen-btn-trigger-crisis:hover {
+    background-color: #C62828 !important;
+    color: #FFFFFF !important;
+}
+
+/* ============================================================
+   ESTILOS COMPLEMENTARIOS DE ELEMENTOS INTERNOS
+   ============================================================ */
+
+/* Listas de Tareas y Subtareas */
+.zen-subtask-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.zen-subtask-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background-color: #FAFAFA;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333333;
+    transition: background-color 0.2s ease;
+}
+
+.zen-subtask-list li:hover {
+    background-color: #F5F5F7;
+}
+
+.zen-subtask-list input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #111111;
+    cursor: pointer;
+}
+
+/* Barras de Progreso */
+.zen-progress-track {
+    width: 100%;
+    height: 6px;
+    background-color: #ECECF0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 16px 0;
+}
+
+.zen-progress-fill {
+    height: 100%;
+    background-color: #111111;
+    width: 0%;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Tarjetas de Recomendación */
+.zen-rec-card {
+    background-color: #FAFAFA;
+    border-left: 3px solid #111111;
+    padding: 16px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #333333;
+    margin: 16px 0;
+}
+
+/* Selectores de Opciones Tipo Navegación Interna */
+.zen-tool-nav {
+    display: flex;
+    gap: 8px;
+    margin: 16px 0;
+}
+
+/* Mensajes de Éxito */
+.zen-success {
+    padding: 12px;
+    background-color: #E8F5E9;
+    color: #2E7D32;
+    border-left: 3px solid #2E7D32;
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    margin-top: 14px;
+    display: none;
+}
+
+.zen-success.show {
+    display: block;
+    animation: zenFadeIn 0.3s ease;
+}
+
+/* Gráficos Estadísticos */
+.zen-chart-bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 120px;
+    padding: 10px 16px 0 16px;
+    border-bottom: 1px solid #E5E5E5;
+    margin: 20px 0;
+}
+
+.zen-bar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 36px;
+    cursor: pointer;
+}
+
+.zen-bar {
+    width: 24px;
+    background-color: #E5E5E5;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease;
+}
+
+.zen-bar-col:hover .zen-bar {
+    background-color: #666666;
+}
+
+.zen-bar-col:nth-child(even) .zen-bar {
+    background-color: #ECECF0;
+}
+
+.zen-bar-col:hover:nth-child(even) .zen-bar {
+    background-color: #666666;
+}
+
+.zen-bar-label {
+    font-size: 11px;
+    color: #666666;
+}
+
+@keyframes zenFadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    #zen-tools-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .zen-timer-display {
+        font-size: 42px;
+    }
+}
