@@ -7,15 +7,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Vinculación exclusiva a su CSS independiente -->
     <link rel="stylesheet" href="../styles/terms-style.css">
     <link rel="stylesheet" href="../styles/dashboard-style.css">
+    <style>
+        .logo-link {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s ease;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+    </style>
 </head>
 <body>
 
 <header class="dash-navbar">
     <div class="dash-nav-container">
-        <span class="dash-brand">VITALIS // Marco Legal</span>
+        <!-- Retorna de inmediato a la Landing Page al hacer clic -->
+        <a href="../../../index.html" class="logo-link">
+            <span class="dash-brand">VITALIS // Marco Legal</span>
+        </a>
         <a href="../../../index.html" class="btn-logout" style="text-decoration: none;">Regresar</a>
     </div>
 </header>
