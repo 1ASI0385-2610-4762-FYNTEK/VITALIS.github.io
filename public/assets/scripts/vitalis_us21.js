@@ -37,11 +37,11 @@ function bindHydrationTracker() {
         counterDisplay.textContent = `${currentGlasses} / 8 Vasos`;
         sessionStorage.setItem('vitalis_water_count', currentGlasses);
         if (currentGlasses >= 8) {
-            waterIcon.textContent = '🌊';
+            waterIcon.textContent = '';
             successMsg.classList.add('show');
             successMsg.textContent = '¡Meta diaria alcanzada! Mantienes un excelente equilibrio físico ✓';
         } else {
-            waterIcon.textContent = '💧';
+            waterIcon.textContent = '';
             successMsg.classList.remove('show');
         }
     }
