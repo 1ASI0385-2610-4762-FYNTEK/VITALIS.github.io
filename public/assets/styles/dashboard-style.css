@@ -787,3 +787,115 @@ body {
         font-size: 36px;
     }
 }
+
+/* ============================================================
+   VITALIS — Sistema de Flexibilidad y Adaptabilidad (Responsive)
+   ============================================================ */
+
+/* 1. Reset Global de Caja Seguro */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Contenedor del Navbar Adaptable */
+.dash-navbar {
+    width: 100%;
+    padding: 16px 24px;
+    background-color: #030213; /* Tu fondo oscuro */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.dash-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que colapse en pantallas muy chicas */
+    gap: 16px;
+}
+
+/* 3. Contenedor del Contenido Principal */
+.dash-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+/* 4. El Banner de Bienvenida o Sugerencias */
+.welcome-banner-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 16px;
+    padding: 24px;
+    width: 100%;
+}
+
+/* 5. CUADRÍCULA DE HERRAMIENTAS (Módulos Dinámicos / HUs) */
+/* Reemplaza o añade este ID para controlar el Grid del Dashboard */
+#zen-tools-container {
+    display: grid;
+    /* auto-fit calcula automáticamente cuántas columnas entran según el espacio */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+    width: 100%;
+}
+
+/* 6. Estructura Elástica de las Tarjetas */
+.dash-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 340px; /* Altura estándar base */
+    width: 100%;
+}
+
+/* ============================================================
+   MEDIA QUERIES (Puntos de quiebre para pantallas móviles)
+   ============================================================ */
+
+/* Tablets y pantallas menores a 768px */
+@media (max-width: 768px) {
+    .dash-container {
+        padding: 20px 16px;
+    }
+
+    #zen-tools-container {
+        grid-template-columns: 1fr; /* Una sola columna fluida */
+        gap: 16px;
+    }
+
+    .dash-card {
+        padding: 20px;
+        min-height: auto; /* Permite que crezca según el texto dictado o gráfico */
+    }
+}
+
+/* Teléfonos móviles muy pequeños (menores a 480px) */
+@media (max-width: 480px) {
+    .dash-nav-container {
+        flex-direction: column; /* Coloca el logo arriba y el saludo abajo */
+        text-align: center;
+    }
+
+    .user-profile-zone {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .btn-logout {
+        width: 100%; /* Botón de cierre de sesión a ancho completo */
+        text-align: center;
+    }
+}
