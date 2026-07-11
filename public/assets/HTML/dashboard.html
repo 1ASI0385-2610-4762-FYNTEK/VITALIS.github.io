@@ -8,12 +8,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/dashboard-style.css">
+    <link rel="stylesheet" href="../styles/zen-tools-style.css">
+    <style>
+        .dash-brand {
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .dash-brand:hover {
+            opacity: 0.85;
+        }
+    </style>
 </head>
 <body>
 
 <header class="dash-navbar">
     <div class="dash-nav-container">
-        <span class="dash-brand">VITALIS // <span id="user-role-badge">Cargando...</span></span>
+        <!-- Al hacer clic te desplaza suavemente hacia el inicio del Dashboard -->
+        <span class="dash-brand" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            VITALIS // <span id="user-role-badge">Cargando...</span>
+        </span>
         <div class="user-profile-zone">
             <span id="welcome-user-text">Bienvenido</span>
             <button class="btn-logout" onclick="logout()">Cerrar Sesión</button>
@@ -22,7 +35,11 @@
 </header>
 
 <main class="dash-container">
-
+    <!-- Aquí se inyectan las tarjetas del ecosistema -->
+    <div class="welcome-banner-card" style="margin-bottom: 24px;">
+        <h2 id="ai-suggestion-title" style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 8px;">Cargando sugerencias...</h2>
+        <p id="ai-suggestion-body" style="color: #666666; font-size: 14px;"></p>
+    </div>
 </main>
 
 <script>
@@ -45,11 +62,10 @@
 
         const roleBadge = document.getElementById('user-role-badge');
         if(role === 'estudiante') {
-            roleBadge.innerText = 'Perfil Universitario';
+            roleBadge.innerText = 'Perfil Universitario (Admin)';
             roleBadge.className = 'badge-student';
-            document.getElementById('conditional-work-block').style.opacity = '0.3';
         } else {
-            roleBadge.innerText = 'Perfil Practicante Pre-Profesional';
+            roleBadge.innerText = 'Perfil Practicante Pre-Profesional (Admin)';
             roleBadge.className = 'badge-intern';
         }
 
@@ -57,96 +73,6 @@
         document.getElementById('ai-suggestion-title').innerText = recommendation.title;
         document.getElementById('ai-suggestion-body').innerText = recommendation.body;
     });
-
-    function addTask(e) {
-        e.preventDefault();
-        const input = document.getElementById('task-input');
-        if (!input.value.trim()) return;
-
-        const list = document.getElementById('task-list-zen');
-        const li = document.createElement('li');
-        li.className = 'task-item-zen';
-
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.addEventListener('change', function () { toggleTask(this); });
-
-        const span = document.createElement('span');
-        span.textContent = input.value.trim();
-
-        li.appendChild(checkbox);
-        li.appendChild(span);
-        list.appendChild(li);
-        input.value = '';
-    }
-
-    function toggleTask(checkbox) {
-        const text = checkbox.nextElementSibling;
-        if (checkbox.checked) {
-            text.style.textDecoration = 'line-through';
-            text.style.opacity = '0.5';
-        } else {
-            text.style.textDecoration = 'none';
-            text.style.opacity = '1';
-        }
-    }
-
-    function feedbackAI(isUseful) {
-        alert(isUseful
-            ? "¡Gracias! El algoritmo priorizará este tipo de recomendaciones en tu bitácora Zen."
-            : "Entendido. Ajustaremos los parámetros de IA para descartar este tema en tus próximas jornadas."
-        );
-    }
-
-    function openStudyBlockForm() {
-        const form = document.getElementById('study-block-form');
-        form.classList.toggle('hidden-element');
-    }
-
-    function saveStudyBlock() {
-        const subject = document.getElementById('study-subject').value;
-        const time = document.getElementById('study-time').value;
-
-        if (!subject || !time) {
-            alert("Por favor completa los campos del horario de estudio.");
-            return;
-        }
-
-        const timeline = document.getElementById('calendar-timeline-events');
-        const block = document.createElement('div');
-        block.className = 'time-block';
-
-        const timeLabel = document.createElement('span');
-        timeLabel.className = 'time-label';
-        timeLabel.textContent = time;
-
-        const pill = document.createElement('div');
-        pill.className = 'event-pill event-study';
-        pill.textContent = `🎓 Repaso Académico: ${subject}`;
-
-        block.appendChild(timeLabel);
-        block.appendChild(pill);
-        timeline.appendChild(block);
-
-        document.getElementById('study-subject').value = '';
-        document.getElementById('study-time').value = '';
-        openStudyBlockForm();
-    }
-
-    function registerMood(emoji, label) {
-        const feedback = document.getElementById('mood-feedback-message');
-        feedback.innerText = `Estado [${label}] registrado en tu historial diario con éxito.`;
-        feedback.classList.remove('hidden-element');
-
-        const stressBar = document.getElementById('live-stress-bar');
-        if(emoji === ':(' || emoji === '>:(') {
-            stressBar.style.height = '85px';
-            stressBar.style.backgroundColor = '#666666';
-        } else {
-            stressBar.style.height = '30px';
-            stressBar.style.backgroundColor = '#111111';
-        }
-    }
 
     function logout() {
         sessionStorage.clear();
@@ -178,7 +104,6 @@
 <script src="../scripts/vitalis_us44_49.js"></script>
 <script src="../scripts/vitalis_us22_23_30_34.js"></script>
 <script src="../scripts/vitalis_main.js"></script>
-
 
 </body>
 </html>
