@@ -8,24 +8,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="public/assets/styles/style.css">
+    <style>
+        /* Estilo interactivo para el botón del logotipo */
+        .logo-area {
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .logo-area:hover {
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
 
-<!-- NAVBAR PRINCIPAL -->
+<!-- NAVBAR PRINCIPAL CON MENÚ HAMBURGUESA -->
 <header class="navbar">
     <div class="navbar-container">
-        <div class="logo-area">
+        <!-- Al hacer clic se desplaza suavemente al inicio de la landing page -->
+        <div class="logo-area" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
             <img src="public/assets/images/vitalis-fondo-negro.png" alt="VITALIS Logo" class="vitalis-logo-img">
             <span class="brand-name">VITALIS</span>
         </div>
-        <nav class="nav-links">
-            <a href="#">Home</a>
-            <a href="public/assets/HTML/about.html">About Us</a>
-        </nav>
-        <div class="navbar-actions">
-            <!-- Bloque Unificado de Acciones a la Derecha Conectado con las Nuevas Vistas -->
-            <button class="btn-navbar-outline" onclick="openLogin()">Iniciar Sesión</button>
-            <a href="public/assets/HTML/pricing.html" class="btn btn-navbar-white" style="text-decoration: none;">Empezar ahora</a>
+
+        <!-- Botón Hamburguesa para Móviles -->
+        <button class="menu-hamburger" id="hamburger-toggle" aria-label="Abrir menú de navegación">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Bloque de Navegación y Acciones Envolvente -->
+        <div class="nav-menu-wrapper" id="nav-menu-container">
+            <nav class="nav-links">
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Home</a>
+                <a href="public/assets/HTML/about.html">About Us</a>
+            </nav>
+            <div class="navbar-actions">
+                <button class="btn-navbar-outline" onclick="openLogin()">Iniciar Sesión</button>
+                <a href="public/assets/HTML/pricing.html" class="btn btn-navbar-white" style="text-decoration: none;">Empezar ahora</a>
+            </div>
         </div>
     </div>
 </header>
@@ -159,7 +180,7 @@
                 </div>
                 <div class="card card-white-pill-why">
                     <p class="card-pill-text text-center-why">
-                        A diferencia de una simple lista de tareas, Vitalis analiza tus patrones de comportamiento para detectar riesgos de salud mental antes de que se conviertan en un problema.
+                        A diferencia de una simple lista de tareas, Vitalis analiza tus patrones de comportamiento para detect riesgos de salud mental antes de que se conviertan en un problema.
                     </p>
                 </div>
             </div>
@@ -194,7 +215,7 @@
         </div>
 
         <div class="footer-nav-links">
-            <a href="#">Propuesta</a>
+            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Propuesta</a>
             <span class="nav-divider">|</span>
             <a href="#problem">Funciones</a>
             <span class="nav-divider">|</span>
@@ -204,7 +225,6 @@
         </div>
 
         <div class="footer-legal-links">
-            <!-- Ruteo Completo de Enlaces del Marco Legal (US-16) -->
             <a href="public/assets/HTML/support.html">Soporte</a>
             <span class="nav-divider">|</span>
             <a href="public/assets/HTML/terms.html">Términos y Condiciones</a>
