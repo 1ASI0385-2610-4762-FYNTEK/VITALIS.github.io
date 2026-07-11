@@ -28,7 +28,7 @@ function bindFocusMode() {
     toggleBtn.addEventListener('click', () => {
         isFocusActive = !isFocusActive;
         if (isFocusActive) {
-            toggleBtn.textContent = '📴 Desactivar Modo Enfoque';
+            toggleBtn.textContent = ' Desactivar Modo Enfoque';
             toggleBtn.style.backgroundColor = '#111111';
             toggleBtn.style.color = '#FFFFFF';
             statusMsg.classList.add('show');
